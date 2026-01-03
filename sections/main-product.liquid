@@ -1,280 +1,89 @@
 <style>
-  .product {
-    padding: 3rem 0 5rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .product {
-      padding: 5rem 0 7rem;
-    }
-  }
-  
-  .product__grid {
-    display: grid;
-    gap: 3rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .product__grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-  }
-  
-  .product__media {
-    position: relative;
-  }
-  
-  .product__image-wrapper {
-    position: relative;
-    aspect-ratio: 1;
-    overflow: hidden;
-    background-color: rgba(245, 245, 244, 0.5);
-    border-radius: var(--radius-xl);
-    padding: 2rem;
-  }
-  
-  .product__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  .product__badge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--brand-foreground);
-    background-color: var(--brand);
-    border-radius: var(--radius);
-  }
-  
-  .product__info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .product__vendor {
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--brand);
-  }
-  
-  .product__title {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  
-  @media (min-width: 768px) {
-    .product__title {
-      font-size: 2.5rem;
-    }
-  }
-  
-  .product__price {
-    margin-bottom: 1.5rem;
-    font-family: 'Sora', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--foreground);
-  }
-  
-  .product__description {
-    margin-bottom: 2rem;
-    color: var(--muted-foreground);
-    line-height: 1.7;
-  }
-  
-  .product__features {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: var(--secondary);
-    border-radius: var(--radius-lg);
-  }
-  
-  .product__features-title {
-    margin-bottom: 1rem;
-    font-family: 'Sora', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--foreground);
-  }
-  
-  .product__features-list {
-    list-style: none;
-  }
-  
-  .product__features-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    color: var(--muted-foreground);
-  }
-  
-  .product__features-item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .product__features-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    flex-shrink: 0;
-    margin-top: 0.125rem;
-    color: var(--brand);
-  }
-  
-  .product__form {
-    margin-bottom: 2rem;
-  }
-  
-  .product__add-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--brand-foreground);
-    background-color: var(--brand);
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .product__add-btn:hover {
-    background-color: var(--brand-hover);
-    transform: translateY(-1px);
-  }
-  
-  .product__add-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  
-  .product__guarantee {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    background-color: var(--brand-muted);
-    border: 1px solid var(--brand);
-    border-radius: var(--radius);
-  }
-  
-  .product__guarantee-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-    color: var(--brand-foreground);
-  }
-  
-  .product__guarantee-text {
-    font-size: 0.875rem;
-    color: var(--brand-foreground);
-  }
-  
-  .product__guarantee-text strong {
-    display: block;
-    font-weight: 600;
-  }
+.product-page{background-color:var(--background)}.breadcrumb{border-bottom:1px solid var(--border);padding:1rem 0}.breadcrumb__link{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;color:var(--muted-foreground);transition:color .2s ease}.breadcrumb__link:hover{color:var(--foreground)}.breadcrumb__icon{width:1rem;height:1rem}.product-hero{padding:3rem 0}@media(min-width:1024px){.product-hero{padding:5rem 0}}.product-hero__grid{display:grid;gap:2.5rem}@media(min-width:1024px){.product-hero__grid{grid-template-columns:1fr 1fr;gap:4rem}}.product-hero__image-wrapper{position:relative;aspect-ratio:1;padding:2rem;background-color:rgba(245,245,244,.5);border-radius:1rem}@media(min-width:1024px){.product-hero__image-wrapper{padding:3rem}}.product-hero__image{width:100%;height:100%;object-fit:contain}.product-hero__price-badge{position:absolute;top:1rem;right:1rem;padding:.5rem 1rem;font-family:'Sora',sans-serif;font-size:1.25rem;font-weight:700;color:var(--brand-foreground);background-color:var(--brand);border-radius:.5rem}.product-hero__info{display:flex;flex-direction:column;justify-content:center}.product-hero__badge{display:inline-block;width:fit-content;margin-bottom:.75rem;padding:.25rem .75rem;font-size:.875rem;font-weight:500;color:var(--brand-foreground);background-color:var(--brand-muted);border-radius:9999px}.product-hero__title{margin-bottom:1rem;font-size:1.875rem;font-weight:700}@media(min-width:768px){.product-hero__title{font-size:2.25rem}}@media(min-width:1024px){.product-hero__title{font-size:3rem}}.product-hero__rating{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}.product-hero__stars{display:flex;align-items:center;gap:.25rem}.product-hero__star{width:1.25rem;height:1.25rem}.product-hero__star--filled{fill:var(--brand);color:var(--brand)}.product-hero__star--empty{color:var(--muted-foreground);opacity:.3}.product-hero__rating-text{font-size:.875rem;color:var(--muted-foreground)}.product-hero__description{margin-bottom:1.5rem;font-size:1.125rem;line-height:1.7;color:var(--muted-foreground)}.product-hero__includes{margin-bottom:2rem;padding:1.25rem;border:1px solid var(--border);border-radius:.75rem;background-color:var(--card)}.product-hero__includes-title{margin-bottom:.75rem;font-family:'Sora',sans-serif;font-weight:600;color:var(--foreground)}.product-hero__includes-list{list-style:none}.product-hero__includes-item{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;color:var(--muted-foreground)}.product-hero__includes-item:last-child{margin-bottom:0}.product-hero__check-icon{width:1rem;height:1rem;color:var(--brand);flex-shrink:0}.product-hero__buttons{display:flex;flex-direction:column;gap:.75rem}@media(min-width:640px){.product-hero__buttons{flex-direction:row}}.product-hero__btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 1.5rem;font-size:1rem;font-weight:500;border-radius:.5rem;transition:all .2s ease;cursor:pointer;text-decoration:none}.product-hero__btn--primary{color:var(--brand-foreground);background-color:var(--brand);border:none}.product-hero__btn--primary:hover{background-color:#E6B800;transform:translateY(-1px)}.product-hero__btn--secondary{color:var(--foreground);background-color:transparent;border:1px solid var(--border)}.product-hero__btn--secondary:hover{background-color:var(--secondary)}.product-hero__btn-icon{width:1.25rem;height:1.25rem}.product-hero__trust{margin-top:1rem;font-size:.875rem;color:var(--muted-foreground)}.product-features{padding:4rem 0;border-top:1px solid var(--border);background-color:rgba(245,245,244,.3)}@media(min-width:1024px){.product-features{padding:6rem 0}}.product-features__header{margin-bottom:3rem;text-align:center}.product-features__title{margin-bottom:1rem;font-size:1.5rem;font-weight:700}@media(min-width:768px){.product-features__title{font-size:1.875rem}}.product-features__subtitle{max-width:42rem;margin:0 auto;color:var(--muted-foreground)}.product-features__grid{display:grid;gap:1.5rem}@media(min-width:768px){.product-features__grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:1024px){.product-features__grid{grid-template-columns:repeat(4,1fr)}}.feature-card{padding:1.5rem;background-color:var(--card);border:1px solid var(--border);border-radius:.75rem}.feature-card__icon-wrapper{display:inline-flex;align-items:center;justify-content:center;width:3rem;height:3rem;margin-bottom:1rem;background-color:var(--brand-muted);border-radius:.5rem}.feature-card__icon{width:1.5rem;height:1.5rem;color:var(--brand)}.feature-card__title{margin-bottom:.5rem;font-family:'Sora',sans-serif;font-weight:600;color:var(--foreground)}.feature-card__description{font-size:.875rem;color:var(--muted-foreground);line-height:1.6}.product-guarantee{padding:4rem 0;border-top:1px solid var(--border)}@media(min-width:1024px){.product-guarantee{padding:6rem 0}}.product-guarantee__container{max-width:56rem;margin:0 auto}.product-guarantee__card{padding:2rem;border:2px solid var(--brand);border-radius:1rem;background:linear-gradient(to bottom right,rgba(255,249,230,.5),var(--background))}@media(min-width:1024px){.product-guarantee__card{padding:3rem}}.product-guarantee__header{display:flex;align-items:center;justify-content:center;gap:.75rem;margin-bottom:2rem;flex-wrap:wrap}.product-guarantee__icon-wrapper{display:flex;align-items:center;justify-content:center;width:3.5rem;height:3.5rem;background-color:var(--brand);border-radius:9999px}.product-guarantee__icon{width:1.75rem;height:1.75rem;color:var(--brand-foreground)}.product-guarantee__title{font-size:1.5rem;font-weight:700}@media(min-width:768px){.product-guarantee__title{font-size:1.875rem}}.product-guarantee__text{margin-bottom:2rem;font-size:1.125rem;text-align:center;color:var(--muted-foreground);line-height:1.7}.product-guarantee__text strong{color:var(--foreground)}.product-guarantee__grid{display:grid;gap:1.5rem}@media(min-width:768px){.product-guarantee__grid{grid-template-columns:repeat(3,1fr)}}.guarantee-item{display:flex;flex-direction:column;align-items:center;text-align:center}.guarantee-item__icon-wrapper{display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;margin-bottom:1rem;background-color:var(--brand-muted);border-radius:.5rem}.guarantee-item__icon{width:1.5rem;height:1.5rem;color:var(--brand)}.guarantee-item__title{margin-bottom:.5rem;font-family:'Sora',sans-serif;font-weight:600;color:var(--foreground)}.guarantee-item__text{font-size:.875rem;color:var(--muted-foreground);line-height:1.6}.product-specs{padding:4rem 0;border-top:1px solid var(--border)}@media(min-width:1024px){.product-specs{padding:6rem 0}}.product-specs__container{max-width:48rem;margin:0 auto}.product-specs__title{margin-bottom:2.5rem;font-size:1.5rem;font-weight:700;text-align:center}@media(min-width:768px){.product-specs__title{font-size:1.875rem}}.product-specs__table{overflow:hidden;border:1px solid var(--border);border-radius:.75rem;background-color:var(--card)}.product-specs__row{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid var(--border)}.product-specs__row:last-child{border-bottom:none}.product-specs__label{color:var(--muted-foreground)}.product-specs__value{font-weight:500;color:var(--foreground);text-align:right}.product-reviews{padding:4rem 0;border-top:1px solid var(--border);background-color:rgba(245,245,244,.3)}@media(min-width:1024px){.product-reviews{padding:6rem 0}}.product-reviews__header{margin-bottom:3rem;text-align:center}.product-reviews__title{margin-bottom:1rem;font-size:1.5rem;font-weight:700}@media(min-width:768px){.product-reviews__title{font-size:1.875rem}}.product-reviews__summary{display:flex;align-items:center;justify-content:center;gap:.5rem;color:var(--muted-foreground);flex-wrap:wrap}.product-reviews__grid{display:grid;gap:1.5rem}@media(min-width:768px){.product-reviews__grid{grid-template-columns:repeat(2,1fr)}}.review-card{padding:1.5rem;background-color:var(--card);border:1px solid var(--border);border-radius:.75rem}.review-card__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}.review-card__stars{display:flex;align-items:center;gap:.125rem}.review-card__star{width:1rem;height:1rem}.review-card__date{font-size:.875rem;color:var(--muted-foreground)}.review-card__text{margin-bottom:.75rem;color:var(--foreground);line-height:1.6}.review-card__author{font-size:.875rem;font-weight:500;color:var(--muted-foreground)}.product-faq{padding:4rem 0;border-top:1px solid var(--border)}@media(min-width:1024px){.product-faq{padding:6rem 0}}.product-faq__container{max-width:48rem;margin:0 auto}.product-faq__title{margin-bottom:2.5rem;font-size:1.5rem;font-weight:700;text-align:center}@media(min-width:768px){.product-faq__title{font-size:1.875rem}}.product-faq .faq__list{border-top:1px solid var(--border)}.product-faq .faq-item{border-bottom:1px solid var(--border)}.product-faq .faq-item__button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:1.25rem 0;text-align:left;font-family:'Sora',sans-serif;font-size:1rem;font-weight:500;color:var(--foreground);background:none;border:none;cursor:pointer}.product-faq .faq-item__button:hover{color:var(--brand)}.product-faq .faq-item__icon{width:1.25rem;height:1.25rem;flex-shrink:0;margin-left:1rem;color:var(--muted-foreground);transition:transform .3s ease}.product-faq .faq-item.is-open .faq-item__icon{transform:rotate(180deg)}.product-faq .faq-item__content{display:none;padding-bottom:1.25rem;color:var(--muted-foreground);line-height:1.7}.product-faq .faq-item.is-open .faq-item__content{display:block}.product-related{padding:4rem 0;border-top:1px solid var(--border);background-color:rgba(245,245,244,.3)}@media(min-width:1024px){.product-related{padding:6rem 0}}.product-related__header{margin-bottom:3rem;text-align:center}.product-related__title{margin-bottom:1rem;font-size:1.5rem;font-weight:700}@media(min-width:768px){.product-related__title{font-size:1.875rem}}.product-related__subtitle{color:var(--muted-foreground)}.product-related__grid{display:grid;gap:1.5rem;max-width:42rem;margin:0 auto}@media(min-width:768px){.product-related__grid{grid-template-columns:repeat(2,1fr)}}.related-card{display:flex;align-items:center;gap:1rem;padding:1.5rem;background-color:rgba(255,255,255,.5);border:2px dashed var(--border);border-radius:.75rem}.related-card__icon-wrapper{display:flex;align-items:center;justify-content:center;width:3.5rem;height:3.5rem;background-color:var(--secondary);border-radius:.5rem;flex-shrink:0}.related-card__icon{width:1.75rem;height:1.75rem;color:var(--muted-foreground);opacity:.5}.related-card__title{font-family:'Sora',sans-serif;font-weight:600;color:var(--muted-foreground)}.related-card__description{font-size:.875rem;color:var(--muted-foreground);opacity:.7}.product-bottom-cta{padding:4rem 0;border-top:1px solid var(--border)}.product-bottom-cta__container{max-width:48rem;margin:0 auto}.product-bottom-cta__card{padding:2.5rem;text-align:center;background:linear-gradient(to bottom right,var(--secondary),rgba(245,245,244,.5));border:1px solid var(--border);border-radius:1rem}.product-bottom-cta__title{margin-bottom:1rem;font-size:1.5rem;font-weight:700}@media(min-width:768px){.product-bottom-cta__title{font-size:1.875rem}}.product-bottom-cta__text{margin-bottom:1.5rem;color:var(--muted-foreground)}
 </style>
 
-<section class="product">
-  <div class="container">
-    <div class="product__grid">
-      <!-- Media -->
-      <div class="product__media">
-        <div class="product__image-wrapper">
-          {% if product.featured_image %}
-            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'product__image', alt: product.title }}
-          {% else %}
-            <img class="product__image" src="{{ 'product-placeholder.svg' | asset_url }}" alt="{{ product.title }}">
-          {% endif %}
-          
-          {% if product.metafields.custom.badge != blank %}
-            <span class="product__badge">{{ product.metafields.custom.badge }}</span>
-          {% endif %}
-        </div>
-      </div>
-      
-      <!-- Info -->
-      <div class="product__info">
-        {% if product.vendor != blank %}
-          <span class="product__vendor">{{ product.vendor }}</span>
-        {% endif %}
-        
-        <h1 class="product__title font-sora">{{ product.title }}</h1>
-        
-        <div class="product__price">{{ product.price | money }}</div>
-        
-        <div class="product__description">
-          {{ product.description }}
-        </div>
-        
-        {% if product.metafields.custom.features != blank %}
-          <div class="product__features">
-            <h3 class="product__features-title">Wat je krijgt:</h3>
-            <ul class="product__features-list">
-              {% assign features = product.metafields.custom.features | split: '|' %}
-              {% for feature in features %}
-                <li class="product__features-item">
-                  <svg class="product__features-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{{ feature | strip }}</span>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% endif %}
-        
-        <form class="product__form" action="/cart/add" method="post">
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-          <button type="submit" class="product__add-btn" {% unless product.available %}disabled{% endunless %}>
-            <svg class="product__add-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-            {% if product.available %}
-              Toevoegen aan winkelwagen
-            {% else %}
-              Uitverkocht
-            {% endif %}
-          </button>
-        </form>
-        
-        <div class="product__guarantee">
-          <svg class="product__guarantee-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-          <span class="product__guarantee-text">
-            <strong>100% Geld-terug-garantie</strong>
-            Niet tevreden? Binnen 14 dagen je geld terug.
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="product-page">
+<div class="breadcrumb"><div class="container"><a href="/" class="breadcrumb__link"><svg class="breadcrumb__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>Terug naar home</a></div></div>
+
+<section class="product-hero"><div class="container"><div class="product-hero__grid">
+<div class="product-hero__image-wrapper">
+{% if product.featured_image %}{{ product.featured_image | image_url: width: 800 | image_tag: class: 'product-hero__image', alt: product.title }}{% else %}<img class="product-hero__image" src="{{ 'product-placeholder.svg' | asset_url }}" alt="{{ product.title }}">{% endif %}
+<span class="product-hero__price-badge">{{ product.price | money }}</span>
+</div>
+
+<div class="product-hero__info">
+<span class="product-hero__badge">Bouwplan</span>
+<h1 class="product-hero__title font-sora">{{ product.title }}</h1>
+
+<div class="product-hero__rating">
+<div class="product-hero__stars">{% for i in (1..5) %}<svg class="product-hero__star product-hero__star--filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>{% endfor %}</div>
+<span class="product-hero__rating-text">4.8 ({{ section.settings.review_count }} reviews)</span>
+</div>
+
+<p class="product-hero__description">{{ product.description }}</p>
+
+<div class="product-hero__includes">
+<h3 class="product-hero__includes-title">Dit krijg je:</h3>
+<ul class="product-hero__includes-list">
+{% for block in section.blocks %}{% if block.type == 'include_item' %}<li class="product-hero__includes-item"><svg class="product-hero__check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>{{ block.settings.text }}</span></li>{% endif %}{% endfor %}
+</ul>
+</div>
+
+<form action="/cart/add" method="post" class="product-hero__buttons">
+<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+<button type="submit" class="product-hero__btn product-hero__btn--primary"><svg class="product-hero__btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>Koop nu voor {{ product.price | money }}</button>
+{% if section.settings.show_preview %}<a href="{{ section.settings.preview_url }}" class="product-hero__btn product-hero__btn--secondary"><svg class="product-hero__btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Gratis preview</a>{% endif %}
+</form>
+<p class="product-hero__trust">✓ Direct downloaden • ✓ 100% geld-terug-garantie</p>
+</div>
+</div></div></section>
+
+<section class="product-features"><div class="container">
+<div class="product-features__header"><h2 class="product-features__title font-sora">{{ section.settings.features_title }}</h2><p class="product-features__subtitle">{{ section.settings.features_subtitle }}</p></div>
+<div class="product-features__grid">{% for block in section.blocks %}{% if block.type == 'feature' %}<div class="feature-card"><div class="feature-card__icon-wrapper">{% case block.settings.icon %}{% when 'file' %}<svg class="feature-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>{% when 'package' %}<svg class="feature-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>{% when 'ruler' %}<svg class="feature-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>{% when 'box' %}<svg class="feature-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>{% endcase %}</div><h3 class="feature-card__title">{{ block.settings.title }}</h3><p class="feature-card__description">{{ block.settings.description }}</p></div>{% endif %}{% endfor %}</div>
+</div></section>
+
+<section class="product-guarantee"><div class="container"><div class="product-guarantee__container"><div class="product-guarantee__card">
+<div class="product-guarantee__header"><div class="product-guarantee__icon-wrapper"><svg class="product-guarantee__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><h2 class="product-guarantee__title font-sora">100% Slagingsgarantie</h2></div>
+<p class="product-guarantee__text">We begrijpen dat een doe-het-zelf project spannend kan zijn. Daarom hebben we dit bouwplan zo ontworpen dat <strong>iedereen succesvol kan bouwen</strong> — van complete beginner tot ervaren klusser.</p>
+<div class="product-guarantee__grid">
+<div class="guarantee-item"><div class="guarantee-item__icon-wrapper"><svg class="guarantee-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div><h3 class="guarantee-item__title">Voor beginners</h3><p class="guarantee-item__text">Nooit eerder geklusd? Geen probleem. Elke stap is uitgelegd alsof het je eerste project is.</p></div>
+<div class="guarantee-item"><div class="guarantee-item__icon-wrapper"><svg class="guarantee-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><h3 class="guarantee-item__title">Voor ervaren klussers</h3><p class="guarantee-item__text">Snelle overzichten en directe zaaglijsten zodat je meteen aan de slag kunt.</p></div>
+<div class="guarantee-item"><div class="guarantee-item__icon-wrapper"><svg class="guarantee-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div><h3 class="guarantee-item__title">Gegarandeerd succes</h3><p class="guarantee-item__text">Lukt het niet? 100% geld terug, geen vragen. Maar dat is nog nooit gebeurd.</p></div>
+</div>
+</div></div></div></section>
+
+<section class="product-specs"><div class="container"><div class="product-specs__container">
+<h2 class="product-specs__title font-sora">Specificaties</h2>
+<div class="product-specs__table">{% for block in section.blocks %}{% if block.type == 'spec' %}<div class="product-specs__row"><span class="product-specs__label">{{ block.settings.label }}</span><span class="product-specs__value">{{ block.settings.value }}</span></div>{% endif %}{% endfor %}</div>
+</div></div></section>
+
+<section class="product-reviews"><div class="container">
+<div class="product-reviews__header"><h2 class="product-reviews__title font-sora">Wat klanten zeggen</h2><div class="product-reviews__summary"><div class="product-hero__stars">{% for i in (1..5) %}<svg class="product-hero__star product-hero__star--filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>{% endfor %}</div><span>4.8 gemiddeld uit {{ section.settings.review_count }} reviews</span></div></div>
+<div class="product-reviews__grid">{% for block in section.blocks %}{% if block.type == 'review' %}<div class="review-card"><div class="review-card__header"><div class="review-card__stars">{% assign rating = block.settings.rating %}{% for i in (1..5) %}<svg class="review-card__star {% if i <= rating %}product-hero__star--filled{% else %}product-hero__star--empty{% endif %}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>{% endfor %}</div><span class="review-card__date">{{ block.settings.date }}</span></div><p class="review-card__text">{{ block.settings.text }}</p><p class="review-card__author">— {{ block.settings.author }}</p></div>{% endif %}{% endfor %}</div>
+</div></section>
+
+<section class="product-faq"><div class="container"><div class="product-faq__container">
+<h2 class="product-faq__title font-sora">Veelgestelde vragen</h2>
+<div class="faq__list">{% for block in section.blocks %}{% if block.type == 'faq' %}<div class="faq-item" data-faq-item><button class="faq-item__button" type="button"><span>{{ block.settings.question }}</span><svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-item__content">{{ block.settings.answer }}</div></div>{% endif %}{% endfor %}</div>
+</div></div></section>
+
+<section class="product-related"><div class="container">
+<div class="product-related__header"><h2 class="product-related__title font-sora">Andere bouwplannen</h2><p class="product-related__subtitle">Binnenkort beschikbaar</p></div>
+<div class="product-related__grid">{% for block in section.blocks %}{% if block.type == 'related' %}<div class="related-card"><div class="related-card__icon-wrapper">{% if block.settings.icon == 'hammer' %}<svg class="related-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>{% else %}<svg class="related-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>{% endif %}</div><div><h3 class="related-card__title">{{ block.settings.title }}</h3><p class="related-card__description">{{ block.settings.description }}</p></div></div>{% endif %}{% endfor %}</div>
+</div></section>
+
+<section class="product-bottom-cta"><div class="container"><div class="product-bottom-cta__container"><div class="product-bottom-cta__card">
+<h2 class="product-bottom-cta__title font-sora">Klaar om te bouwen?</h2>
+<p class="product-bottom-cta__text">Download het bouwplan en begin dit weekend nog.</p>
+<form action="/cart/add" method="post"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button type="submit" class="product-hero__btn product-hero__btn--primary"><svg class="product-hero__btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>Koop nu voor {{ product.price | money }}</button></form>
+</div></div></div></section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-faq-item]').forEach(function(item){var btn=item.querySelector('.faq-item__button');if(btn){btn.addEventListener('click',function(){var isOpen=item.classList.contains('is-open');document.querySelectorAll('[data-faq-item]').forEach(function(i){i.classList.remove('is-open')});if(!isOpen){item.classList.add('is-open')}})}})});
+</script>
 
 {% schema %}
-{
-  "name": "Product pagina",
-  "settings": []
-}
+{"name":"Product pagina","settings":[{"type":"number","id":"review_count","label":"Aantal reviews","default":4},{"type":"checkbox","id":"show_preview","label":"Toon preview knop","default":true},{"type":"url","id":"preview_url","label":"Preview URL"},{"type":"text","id":"features_title","label":"Features titel","default":"Wat zit er in het bouwplan?"},{"type":"text","id":"features_subtitle","label":"Features ondertitel","default":"Alles wat je nodig hebt om direct aan de slag te gaan"}],"blocks":[{"type":"include_item","name":"Inclusief item","settings":[{"type":"text","id":"text","label":"Tekst","default":"Complete zaaglijst"}]},{"type":"feature","name":"Feature","settings":[{"type":"select","id":"icon","label":"Icoon","options":[{"value":"file","label":"Bestand"},{"value":"package","label":"Pakket"},{"value":"ruler","label":"Meetlat"},{"value":"box","label":"Doos"}],"default":"file"},{"type":"text","id":"title","label":"Titel","default":"Feature"},{"type":"textarea","id":"description","label":"Beschrijving","default":"Beschrijving"}]},{"type":"spec","name":"Specificatie","settings":[{"type":"text","id":"label","label":"Label","default":"Label"},{"type":"text","id":"value","label":"Waarde","default":"Waarde"}]},{"type":"review","name":"Review","settings":[{"type":"range","id":"rating","label":"Sterren","min":1,"max":5,"default":5},{"type":"text","id":"date","label":"Datum","default":"2 weken geleden"},{"type":"textarea","id":"text","label":"Tekst","default":"Review tekst"},{"type":"text","id":"author","label":"Auteur","default":"Naam"}]},{"type":"faq","name":"FAQ","settings":[{"type":"text","id":"question","label":"Vraag","default":"Vraag"},{"type":"textarea","id":"answer","label":"Antwoord","default":"Antwoord"}]},{"type":"related","name":"Gerelateerd","settings":[{"type":"select","id":"icon","label":"Icoon","options":[{"value":"hammer","label":"Gereedschap"},{"value":"ruler","label":"Meetlat"}],"default":"hammer"},{"type":"text","id":"title","label":"Titel","default":"Product"},{"type":"text","id":"description","label":"Beschrijving","default":"Beschrijving"}]}],"presets":[{"name":"Product pagina","blocks":[{"type":"include_item","settings":{"text":"Complete zaaglijst & materiaallijst (PDF)"}},{"type":"include_item","settings":{"text":"Stap-voor-stap instructies met foto's"}},{"type":"include_item","settings":{"text":"5 configuraties (2x2 tot 4x4)"}},{"type":"include_item","settings":{"text":"Levenslange updates"}},{"type":"feature","settings":{"icon":"file","title":"Complete zaaglijst","description":"Exacte maten voor al het hout, klaar om mee te nemen naar de bouwmarkt"}},{"type":"feature","settings":{"icon":"package","title":"Materiaallijst","description":"Alle benodigde materialen met artikelnummers voor Gamma, Praxis & Hornbach"}},{"type":"feature","settings":{"icon":"ruler","title":"Stap-voor-stap instructies","description":"Duidelijke foto's en uitleg bij elke stap van het bouwproces"}},{"type":"feature","settings":{"icon":"box","title":"Meerdere configuraties","description":"Van 2x2 tot 4x4 kratten - kies wat past in jouw ruimte"}},{"type":"spec","settings":{"label":"Geschikt voor","value":"IKEA Samla 45L boxen"}},{"type":"spec","settings":{"label":"Configuraties","value":"2x2, 2x3, 3x3, 3x4, 4x4"}},{"type":"spec","settings":{"label":"Benodigde tijd","value":"2-4 uur"}},{"type":"spec","settings":{"label":"Moeilijkheidsgraad","value":"Beginner"}},{"type":"spec","settings":{"label":"Gereedschap","value":"Accuboormachine, zaag, meetlint"}},{"type":"spec","settings":{"label":"Bestandsformaat","value":"PDF (direct downloaden)"}},{"type":"review","settings":{"rating":5,"date":"2 weken geleden","text":"Super duidelijk bouwplan! In een middag gebouwd en nu heb ik eindelijk overzicht in mijn garage.","author":"Peter V."}},{"type":"review","settings":{"rating":5,"date":"1 maand geleden","text":"Precies wat ik zocht. De zaaglijst is heel handig, de medewerker bij Gamma kon alles direct voor me zagen.","author":"Sandra M."}},{"type":"review","settings":{"rating":4,"date":"3 weken geleden","text":"Goed bouwplan, stevig resultaat. Enige tip: neem iets meer schroeven mee dan aangegeven.","author":"Mark de J."}},{"type":"review","settings":{"rating":5,"date":"1 week geleden","text":"Als beginner was dit perfect. Alle stappen zijn duidelijk uitgelegd met foto's.","author":"Lisa K."}},{"type":"faq","settings":{"question":"Welke IKEA boxen passen in dit rek?","answer":"Het rek is specifiek ontworpen voor de IKEA Samla 45 liter boxen (39x57x28 cm). Dit zijn de populairste opbergboxen en perfect voor garage-opslag."}},{"type":"faq","settings":{"question":"Welk hout heb ik nodig?","answer":"Het bouwplan specificeert standaard vurenhout dat je bij elke bouwmarkt kunt kopen. We geven exacte maten en zelfs artikelnummers voor Gamma, Praxis en Hornbach."}},{"type":"faq","settings":{"question":"Hoeveel kost het hout ongeveer?","answer":"Afhankelijk van de configuratie kost het hout tussen de €40 en €100. Een 3x3 configuratie kost gemiddeld €65 aan materiaal."}},{"type":"faq","settings":{"question":"Kan ik het rek later uitbreiden?","answer":"Ja! Het ontwerp is modulair. Je kunt later extra secties toevoegen zonder het bestaande rek aan te passen."}},{"type":"faq","settings":{"question":"Wat als ik niet tevreden ben?","answer":"We bieden 100% geld-terug-garantie. Niet tevreden? Stuur een mail en je krijgt je geld binnen 24 uur terug."}},{"type":"related","settings":{"icon":"hammer","title":"Gereedschapswand","description":"Overzichtelijke opslag voor al je gereedschap"}},{"type":"related","settings":{"icon":"ruler","title":"Werkbank","description":"Stevige doe-het-zelf werkbank"}}]}]}
 {% endschema %}
