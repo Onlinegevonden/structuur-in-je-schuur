@@ -1,0 +1,296 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "badge_text": "Digitale bouwplannen",
+        "title_line1": "Van chaos naar controle",
+        "title_line2": "in één weekend",
+        "description": "Praktische bouwplannen voor je schuur of garage. Speciaal ontworpen voor Nederlandse bouwmarkten en IKEA opbergboxen.",
+        "primary_button_text": "Bekijk bouwplannen",
+        "secondary_button_text": "Hoe werkt het?",
+        "price_label": "Vanaf",
+        "price_text": "€19"
+      },
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "clock",
+            "text": "Klaar in 1 weekend"
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "download",
+            "text": "Direct downloaden"
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "check",
+            "text": "Beginner-vriendelijk"
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3"]
+    },
+    "benefits": {
+      "type": "benefits",
+      "settings": {
+        "badge_text": "Waarom onze bouwplannen",
+        "title": "Ontworpen voor succes",
+        "subtitle": "Onze bouwplannen zijn door honderden Nederlandse klussers getest en verfijnd."
+      },
+      "blocks": {
+        "benefit-1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "map-pin",
+            "title": "100% Nederlands",
+            "description": "Alle materialen zijn verkrijgbaar bij Gamma, Praxis en Hornbach. Geen gedoe met Amerikaanse maten."
+          }
+        },
+        "benefit-2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lightbulb",
+            "title": "Beginner-vriendelijk",
+            "description": "Duidelijke stap-voor-stap instructies met foto's. Geen ervaring nodig, basisgereedschap volstaat."
+          }
+        },
+        "benefit-3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "title": "Weekend project",
+            "description": "Elk project is ontworpen om in één weekend af te ronden. Van chaos naar controle in 48 uur."
+          }
+        },
+        "benefit-4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "100% Garantie",
+            "description": "Niet tevreden? Je krijgt je geld terug. Geen vragen, geen gedoe. Wij geloven in onze bouwplannen."
+          }
+        },
+        "benefit-5": {
+          "type": "benefit",
+          "settings": {
+            "icon": "users",
+            "title": "IKEA compatible",
+            "description": "Speciaal ontworpen voor IKEA Samla boxen. De perfecte combinatie van kwaliteit en prijs."
+          }
+        },
+        "benefit-6": {
+          "type": "benefit",
+          "settings": {
+            "icon": "check-circle",
+            "title": "Direct starten",
+            "description": "Na aankoop direct downloaden en beginnen. Print de zaaglijst en ga naar de bouwmarkt."
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5", "benefit-6"]
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {
+        "badge_text": "Zo simpel is het",
+        "title": "Hoe werkt het?",
+        "subtitle": "Van aankoop tot opgeruimde schuur in vier eenvoudige stappen."
+      },
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "shopping-bag",
+            "title": "1. Kies je bouwplan",
+            "description": "Selecteer het bouwplan dat past bij jouw situatie en wensen."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "download",
+            "title": "2. Direct downloaden",
+            "description": "Na betaling ontvang je direct je PDF met alle instructies."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "hammer",
+            "title": "3. Bouw het zelf",
+            "description": "Volg de stap-voor-stap instructies met onze duidelijke handleiding."
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "party",
+            "title": "4. Geniet van je resultaat",
+            "description": "Een opgeruimde schuur binnen één weekend - gegarandeerd!"
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"]
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "badge_text": "Bouwplannen",
+        "title": "Onze populairste bouwplannen",
+        "subtitle": "Elk bouwplan is uitgebreid getest en bevat alles wat je nodig hebt om direct aan de slag te gaan."
+      },
+      "blocks": {
+        "coming-1": {
+          "type": "coming_soon",
+          "settings": {
+            "icon": "file",
+            "title": "Gereedschapswand",
+            "label": "Binnenkort beschikbaar"
+          }
+        },
+        "coming-2": {
+          "type": "coming_soon",
+          "settings": {
+            "icon": "ruler",
+            "title": "Werkbank",
+            "label": "Binnenkort beschikbaar"
+          }
+        }
+      },
+      "block_order": ["coming-1", "coming-2"]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "badge_text": "Klanten aan het woord",
+        "title": "Wat anderen zeggen",
+        "subtitle": "Honderden Nederlanders gingen je voor. Dit is wat ze ervan vonden."
+      },
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Eindelijk een bouwplan dat echt werkt! Zaterdagochtend begonnen, zondagmiddag stond ie. Mijn vrouw was verbaasd dat ik het gefikst had.",
+            "name": "Peter van Dijk",
+            "location": "Almere"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "De materiaallijst was perfect. Alles in één keer bij de Gamma gehaald. Geen gedoe met omrekenen of zoeken naar alternatieven.",
+            "name": "Sandra Bakker",
+            "location": "Rotterdam"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Nooit eerder iets gebouwd, maar met deze instructies lukte het prima. De stap-voor-stap uitleg is echt idiot-proof.",
+            "name": "Mark Jansen",
+            "location": "Utrecht"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"]
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "title": "Veelgestelde vragen",
+        "subtitle": "Alles wat je wilt weten over de bouwplannen"
+      },
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Welk gereedschap heb ik nodig?",
+            "answer": "Basis gereedschap is voldoende: een cirkelzaag of decoupeerzaag, boormachine, meetlint, winkelhaak en schroevendraaier. Geen professionele werkplaats nodig."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Past de kast in elke schuur?",
+            "answer": "De standaard maten zijn 60 × 40 × 180 cm, maar het bouwplan bevat instructies om de afmetingen aan te passen aan jouw ruimte. Zo past het altijd."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Kan ik andere bakken gebruiken dan IKEA Samla?",
+            "answer": "De standaardmaten zijn geoptimaliseerd voor IKEA Samla 45L bakken, maar het plan bevat ook instructies om aan te passen voor andere bakformaten."
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Hoeveel kost het materiaal?",
+            "answer": "Gemiddeld €80-120 aan materiaal bij de bouwmarkt, afhankelijk van de gekozen configuratie (3, 4 of 5 bakken). Veel goedkoper dan kant-en-klare alternatieven."
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Wat als ik niet tevreden ben?",
+            "answer": "100% geld-terug-garantie. Stuur binnen 14 dagen een mailtje en je krijgt je geld terug. Geen vragen, geen gedoe."
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Krijg ik support als ik vastloop?",
+            "answer": "Ja! Bij elke aankoop krijg je toegang tot e-mail support. Stuur je vraag (inclusief foto's) en je krijgt binnen 24 uur antwoord."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "title": "Klaar om je schuur te transformeren?",
+        "description": "Begin dit weekend nog. Download het bouwplan en maak een einde aan de chaos.",
+        "primary_button_text": "Download voor €19",
+        "secondary_button_text": "Bekijk voorbeelden"
+      },
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "text": "500+ tevreden klanten"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "text": "Direct downloaden"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "text": "100% garantie"
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    }
+  },
+  "order": [
+    "hero",
+    "benefits",
+    "how-it-works",
+    "products",
+    "testimonials",
+    "faq",
+    "cta"
+  ]
+}

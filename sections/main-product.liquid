@@ -1,0 +1,280 @@
+<style>
+  .product {
+    padding: 3rem 0 5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .product {
+      padding: 5rem 0 7rem;
+    }
+  }
+  
+  .product__grid {
+    display: grid;
+    gap: 3rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .product__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+  
+  .product__media {
+    position: relative;
+  }
+  
+  .product__image-wrapper {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: rgba(245, 245, 244, 0.5);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+  }
+  
+  .product__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .product__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brand-foreground);
+    background-color: var(--brand);
+    border-radius: var(--radius);
+  }
+  
+  .product__info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product__vendor {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brand);
+  }
+  
+  .product__title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  @media (min-width: 768px) {
+    .product__title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .product__price {
+    margin-bottom: 1.5rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--foreground);
+  }
+  
+  .product__description {
+    margin-bottom: 2rem;
+    color: var(--muted-foreground);
+    line-height: 1.7;
+  }
+  
+  .product__features {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--secondary);
+    border-radius: var(--radius-lg);
+  }
+  
+  .product__features-title {
+    margin-bottom: 1rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  
+  .product__features-list {
+    list-style: none;
+  }
+  
+  .product__features-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--muted-foreground);
+  }
+  
+  .product__features-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .product__features-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    color: var(--brand);
+  }
+  
+  .product__form {
+    margin-bottom: 2rem;
+  }
+  
+  .product__add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--brand-foreground);
+    background-color: var(--brand);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .product__add-btn:hover {
+    background-color: var(--brand-hover);
+    transform: translateY(-1px);
+  }
+  
+  .product__add-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .product__guarantee {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--brand-muted);
+    border: 1px solid var(--brand);
+    border-radius: var(--radius);
+  }
+  
+  .product__guarantee-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    color: var(--brand-foreground);
+  }
+  
+  .product__guarantee-text {
+    font-size: 0.875rem;
+    color: var(--brand-foreground);
+  }
+  
+  .product__guarantee-text strong {
+    display: block;
+    font-weight: 600;
+  }
+</style>
+
+<section class="product">
+  <div class="container">
+    <div class="product__grid">
+      <!-- Media -->
+      <div class="product__media">
+        <div class="product__image-wrapper">
+          {% if product.featured_image %}
+            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'product__image', alt: product.title }}
+          {% else %}
+            <img class="product__image" src="{{ 'product-placeholder.svg' | asset_url }}" alt="{{ product.title }}">
+          {% endif %}
+          
+          {% if product.metafields.custom.badge != blank %}
+            <span class="product__badge">{{ product.metafields.custom.badge }}</span>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Info -->
+      <div class="product__info">
+        {% if product.vendor != blank %}
+          <span class="product__vendor">{{ product.vendor }}</span>
+        {% endif %}
+        
+        <h1 class="product__title font-sora">{{ product.title }}</h1>
+        
+        <div class="product__price">{{ product.price | money }}</div>
+        
+        <div class="product__description">
+          {{ product.description }}
+        </div>
+        
+        {% if product.metafields.custom.features != blank %}
+          <div class="product__features">
+            <h3 class="product__features-title">Wat je krijgt:</h3>
+            <ul class="product__features-list">
+              {% assign features = product.metafields.custom.features | split: '|' %}
+              {% for feature in features %}
+                <li class="product__features-item">
+                  <svg class="product__features-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{{ feature | strip }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        
+        <form class="product__form" action="/cart/add" method="post">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" class="product__add-btn" {% unless product.available %}disabled{% endunless %}>
+            <svg class="product__add-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            {% if product.available %}
+              Toevoegen aan winkelwagen
+            {% else %}
+              Uitverkocht
+            {% endif %}
+          </button>
+        </form>
+        
+        <div class="product__guarantee">
+          <svg class="product__guarantee-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span class="product__guarantee-text">
+            <strong>100% Geld-terug-garantie</strong>
+            Niet tevreden? Binnen 14 dagen je geld terug.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product pagina",
+  "settings": []
+}
+{% endschema %}

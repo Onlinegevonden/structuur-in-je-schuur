@@ -1,0 +1,124 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Structuur in je Schuur",
+    "theme_version": "1.0.0",
+    "theme_author": "Structuur in je Schuur",
+    "theme_documentation_url": "https://structuurinjeschuur.nl",
+    "theme_support_url": "mailto:info@structuurinjeschuur.nl"
+  },
+  {
+    "name": "Kleuren",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Merk kleuren"
+      },
+      {
+        "type": "color",
+        "id": "color_brand",
+        "label": "Merk kleur",
+        "default": "#FFCC00"
+      },
+      {
+        "type": "color",
+        "id": "color_brand_foreground",
+        "label": "Merk tekst kleur",
+        "default": "#1a1a1a"
+      },
+      {
+        "type": "header",
+        "content": "Achtergrond kleuren"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Achtergrond",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_background_secondary",
+        "label": "Secundaire achtergrond",
+        "default": "#F5F5F4"
+      },
+      {
+        "type": "header",
+        "content": "Tekst kleuren"
+      },
+      {
+        "type": "color",
+        "id": "color_foreground",
+        "label": "Tekst kleur",
+        "default": "#1F2937"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "label": "Gedempte tekst kleur",
+        "default": "#6B7280"
+      }
+    ]
+  },
+  {
+    "name": "Typografie",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Koppen"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Koppen lettertype",
+        "default": "sora_n6"
+      },
+      {
+        "type": "header",
+        "content": "Body tekst"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body lettertype",
+        "default": "outfit_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social media accounts"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram link"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook link"
+      },
+      {
+        "type": "text",
+        "id": "social_email",
+        "label": "E-mailadres",
+        "default": "info@structuurinjeschuur.nl"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "32 x 32px .png aanbevolen"
+      }
+    ]
+  }
+]

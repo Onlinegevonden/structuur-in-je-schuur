@@ -1,0 +1,30 @@
+{
+  "current": {
+    "color_brand": "#FFCC00",
+    "color_brand_foreground": "#1a1a1a",
+    "color_background": "#FFFFFF",
+    "color_background_secondary": "#F5F5F4",
+    "color_foreground": "#1F2937",
+    "color_muted": "#6B7280",
+    "social_email": "info@structuurinjeschuur.nl",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_letter": "S",
+          "logo_text": "Structuur in je Schuur",
+          "cta_text": "Bekijk bouwplannen"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "logo_letter": "S",
+          "logo_text": "Structuur in je Schuur",
+          "description": "Van chaos naar controle in één weekend. Praktische bouwplannen voor Nederlandse doe-het-zelvers die hun schuur of garage willen organiseren.",
+          "email": "info@structuurinjeschuur.nl"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,279 @@
+<style>
+  .benefits {
+    background-color: rgba(245, 245, 244, 0.3);
+    padding: 5rem 0;
+  }
+  
+  @media (min-width: 1024px) {
+    .benefits {
+      padding: 7rem 0;
+    }
+  }
+  
+  .benefits__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .benefits__badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.375rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    background-color: var(--brand-muted);
+    color: var(--brand-foreground);
+  }
+  
+  .benefits__title {
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+  
+  @media (min-width: 768px) {
+    .benefits__title {
+      font-size: 2.25rem;
+    }
+  }
+  
+  .benefits__subtitle {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+  }
+  
+  .benefits__grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .benefits__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .benefits__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .benefit-card {
+    padding: 1.5rem;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    transition: all 0.3s ease;
+  }
+  
+  .benefit-card:hover {
+    border-color: rgba(255, 204, 0, 0.3);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .benefit-card__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    background-color: var(--brand-muted);
+    border-radius: var(--radius-lg);
+    transition: background-color 0.3s ease;
+  }
+  
+  .benefit-card:hover .benefit-card__icon-wrapper {
+    background-color: var(--brand);
+  }
+  
+  .benefit-card__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--brand-foreground);
+  }
+  
+  .benefit-card__title {
+    margin-bottom: 0.5rem;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  
+  .benefit-card__description {
+    color: var(--muted-foreground);
+    line-height: 1.6;
+  }
+</style>
+
+<section class="benefits" id="voordelen">
+  <div class="container">
+    <!-- Header -->
+    <div class="benefits__header animate-on-scroll" style="opacity: 0; animation: fadeInUp 0.5s ease-out forwards;">
+      {% if section.settings.badge_text != blank %}
+        <span class="benefits__badge">{{ section.settings.badge_text }}</span>
+      {% endif %}
+      <h2 class="benefits__title font-sora">{{ section.settings.title | default: 'Ontworpen voor succes' }}</h2>
+      <p class="benefits__subtitle">{{ section.settings.subtitle | default: 'Onze bouwplannen zijn door honderden Nederlandse klussers getest en verfijnd.' }}</p>
+    </div>
+    
+    <!-- Benefits grid -->
+    <div class="benefits__grid">
+      {% for block in section.blocks %}
+        <div class="benefit-card animate-on-scroll" style="opacity: 0; animation: fadeInUp 0.5s ease-out {{ forloop.index | times: 0.05 }}s forwards;" {{ block.shopify_attributes }}>
+          <div class="benefit-card__icon-wrapper">
+            {% case block.settings.icon %}
+              {% when 'map-pin' %}
+                <svg class="benefit-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              {% when 'lightbulb' %}
+                <svg class="benefit-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              {% when 'clock' %}
+                <svg class="benefit-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              {% when 'shield' %}
+                <svg class="benefit-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              {% when 'users' %}
+                <svg class="benefit-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              {% when 'check-circle' %}
+                <svg class="benefit-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            {% endcase %}
+          </div>
+          <h3 class="benefit-card__title">{{ block.settings.title }}</h3>
+          <p class="benefit-card__description">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Voordelen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge tekst",
+      "default": "Waarom onze bouwplannen"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Ontworpen voor succes"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Ondertitel",
+      "default": "Onze bouwplannen zijn door honderden Nederlandse klussers getest en verfijnd."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Voordeel",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icoon",
+          "options": [
+            { "value": "map-pin", "label": "Locatie pin" },
+            { "value": "lightbulb", "label": "Lampje" },
+            { "value": "clock", "label": "Klok" },
+            { "value": "shield", "label": "Schild" },
+            { "value": "users", "label": "Gebruikers" },
+            { "value": "check-circle", "label": "Vinkje" }
+          ],
+          "default": "check-circle"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titel",
+          "default": "Voordeel titel"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Beschrijving",
+          "default": "Beschrijving van het voordeel."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Voordelen",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "map-pin",
+            "title": "100% Nederlands",
+            "description": "Alle materialen zijn verkrijgbaar bij Gamma, Praxis en Hornbach. Geen gedoe met Amerikaanse maten."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "lightbulb",
+            "title": "Beginner-vriendelijk",
+            "description": "Duidelijke stap-voor-stap instructies met foto's. Geen ervaring nodig, basisgereedschap volstaat."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "title": "Weekend project",
+            "description": "Elk project is ontworpen om in één weekend af te ronden. Van chaos naar controle in 48 uur."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "100% Garantie",
+            "description": "Niet tevreden? Je krijgt je geld terug. Geen vragen, geen gedoe. Wij geloven in onze bouwplannen."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "users",
+            "title": "IKEA compatible",
+            "description": "Speciaal ontworpen voor IKEA Samla boxen. De perfecte combinatie van kwaliteit en prijs."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "check-circle",
+            "title": "Direct starten",
+            "description": "Na aankoop direct downloaden en beginnen. Print de zaaglijst en ga naar de bouwmarkt."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

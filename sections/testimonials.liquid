@@ -1,0 +1,216 @@
+<style>
+  .testimonials {
+    background-color: rgba(245, 245, 244, 0.3);
+    padding: 5rem 0;
+  }
+  
+  @media (min-width: 1024px) {
+    .testimonials {
+      padding: 7rem 0;
+    }
+  }
+  
+  .testimonials__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .testimonials__badge {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brand);
+  }
+  
+  .testimonials__title {
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+  
+  @media (min-width: 768px) {
+    .testimonials__title {
+      font-size: 2.25rem;
+    }
+  }
+  
+  .testimonials__subtitle {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+  }
+  
+  .testimonials__grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .testimonials__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+    background-color: var(--background);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .testimonial-card__quote {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--foreground);
+  }
+  
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .testimonial-card__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-weight: 600;
+    color: var(--brand-foreground);
+    background-color: var(--brand);
+    border-radius: 9999px;
+  }
+  
+  .testimonial-card__info {
+    flex: 1;
+  }
+  
+  .testimonial-card__name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  
+  .testimonial-card__location {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+</style>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials__header animate-on-scroll" style="opacity: 0; animation: fadeInUp 0.5s ease-out forwards;">
+      {% if section.settings.badge_text != blank %}
+        <span class="testimonials__badge">{{ section.settings.badge_text }}</span>
+      {% endif %}
+      <h2 class="testimonials__title font-sora">{{ section.settings.title | default: 'Wat anderen zeggen' }}</h2>
+      <p class="testimonials__subtitle">{{ section.settings.subtitle | default: 'Honderden Nederlanders gingen je voor. Dit is wat ze ervan vonden.' }}</p>
+    </div>
+    
+    <div class="testimonials__grid">
+      {% for block in section.blocks %}
+        <div class="testimonial-card animate-on-scroll" style="opacity: 0; animation: fadeInUp 0.5s ease-out {{ forloop.index | times: 0.1 }}s forwards;" {{ block.shopify_attributes }}>
+          <p class="testimonial-card__quote">"{{ block.settings.quote }}"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">
+              {{ block.settings.name | slice: 0 }}
+            </div>
+            <div class="testimonial-card__info">
+              <p class="testimonial-card__name">{{ block.settings.name }}</p>
+              <p class="testimonial-card__location">{{ block.settings.location }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge tekst",
+      "default": "Klanten aan het woord"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Wat anderen zeggen"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Ondertitel",
+      "default": "Honderden Nederlanders gingen je voor. Dit is wat ze ervan vonden."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Dit is een geweldige review van een tevreden klant."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Naam",
+          "default": "Klant Naam"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Locatie",
+          "default": "Amsterdam"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Eindelijk een bouwplan dat echt werkt! Zaterdagochtend begonnen, zondagmiddag stond ie. Mijn vrouw was verbaasd dat ik het gefikst had.",
+            "name": "Peter van Dijk",
+            "location": "Almere"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "De materiaallijst was perfect. Alles in één keer bij de Gamma gehaald. Geen gedoe met omrekenen of zoeken naar alternatieven.",
+            "name": "Sandra Bakker",
+            "location": "Rotterdam"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Nooit eerder iets gebouwd, maar met deze instructies lukte het prima. De stap-voor-stap uitleg is echt idiot-proof.",
+            "name": "Mark Jansen",
+            "location": "Utrecht"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

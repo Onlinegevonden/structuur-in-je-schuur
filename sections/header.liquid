@@ -1,0 +1,305 @@
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  
+  @media (min-width: 1024px) {
+    .header__container {
+      height: 80px;
+    }
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .header__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.75rem;
+    background-color: var(--brand);
+  }
+  
+  .header__logo-icon span {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-foreground);
+  }
+  
+  .header__logo-text {
+    display: none;
+    font-family: 'Sora', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  
+  @media (min-width: 640px) {
+    .header__logo-text {
+      display: inline;
+    }
+  }
+  
+  .header__nav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .header__nav {
+      display: flex;
+    }
+  }
+  
+  .header__nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    transition: color 0.2s ease;
+  }
+  
+  .header__nav-link:hover {
+    color: var(--foreground);
+  }
+  
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .header__cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+  
+  .header__cart:hover {
+    background-color: var(--secondary);
+  }
+  
+  .header__cart-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--foreground);
+  }
+  
+  .header__cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--brand-foreground);
+    background-color: var(--brand);
+    border-radius: 9999px;
+  }
+  
+  .header__cta {
+    display: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .header__cta {
+      display: inline-flex;
+    }
+  }
+  
+  .header__menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+  }
+  
+  .header__menu-toggle:hover {
+    background-color: var(--secondary);
+  }
+  
+  @media (min-width: 1024px) {
+    .header__menu-toggle {
+      display: none;
+    }
+  }
+  
+  .header__menu-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--foreground);
+  }
+  
+  /* Mobile menu */
+  .header__mobile-menu {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+  
+  .header__mobile-menu.is-open {
+    display: block;
+  }
+  
+  @media (min-width: 1024px) {
+    .header__mobile-menu {
+      display: none !important;
+    }
+  }
+  
+  .header__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .header__mobile-nav-link {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    transition: color 0.2s ease;
+  }
+  
+  .header__mobile-nav-link:hover {
+    color: var(--foreground);
+  }
+  
+  .header__mobile-cta {
+    margin-top: 1rem;
+  }
+</style>
+
+<header class="header">
+  <div class="container">
+    <div class="header__container">
+      <!-- Logo -->
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">
+          <span>{{ section.settings.logo_letter | default: 'S' }}</span>
+        </div>
+        <span class="header__logo-text">{{ section.settings.logo_text | default: shop.name }}</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="header__nav">
+        {% for link in section.settings.menu.links %}
+          <a href="{{ link.url }}" class="header__nav-link">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+      
+      <!-- Actions -->
+      <div class="header__actions">
+        <a href="{{ routes.cart_url }}" class="header__cart">
+          <svg class="header__cart-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="header__cart-count">{{ cart.item_count }}</span>
+        </a>
+        
+        <a href="#producten" class="header__cta btn btn-brand">
+          {{ section.settings.cta_text | default: 'Bekijk bouwplannen' }}
+        </a>
+        
+        <button class="header__menu-toggle" aria-label="Menu openen" data-menu-toggle>
+          <svg class="header__menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="header__mobile-menu" data-mobile-menu>
+      <nav class="header__mobile-nav">
+        {% for link in section.settings.menu.links %}
+          <a href="{{ link.url }}" class="header__mobile-nav-link">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+      <div class="header__mobile-cta">
+        <a href="#producten" class="btn btn-brand" style="width: 100%;">
+          {{ section.settings.cta_text | default: 'Bekijk bouwplannen' }}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('is-open');
+        const isOpen = mobileMenu.classList.contains('is-open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        menuToggle.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_letter",
+      "label": "Logo letter",
+      "default": "S"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo tekst",
+      "default": "Structuur in je Schuur"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigatie menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA knop tekst",
+      "default": "Bekijk bouwplannen"
+    }
+  ]
+}
+{% endschema %}

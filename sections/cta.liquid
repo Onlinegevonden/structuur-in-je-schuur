@@ -1,0 +1,233 @@
+<style>
+  .cta {
+    background-color: var(--background);
+    padding: 5rem 0;
+  }
+  
+  @media (min-width: 1024px) {
+    .cta {
+      padding: 7rem 0;
+    }
+  }
+  
+  .cta__container {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  
+  .cta__card {
+    position: relative;
+    overflow: hidden;
+    padding: 2.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom right, var(--secondary), rgba(245, 245, 244, 0.5));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+  }
+  
+  @media (min-width: 768px) {
+    .cta__card {
+      padding: 3.5rem;
+    }
+  }
+  
+  .cta__accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8rem;
+    height: 8rem;
+    transform: translate(50%, -50%);
+    background-color: rgba(255, 204, 0, 0.1);
+    border-radius: 9999px;
+    filter: blur(2rem);
+    pointer-events: none;
+  }
+  
+  .cta__title {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  @media (min-width: 768px) {
+    .cta__title {
+      font-size: 1.875rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cta__title {
+      font-size: 2.25rem;
+    }
+  }
+  
+  .cta__description {
+    position: relative;
+    z-index: 10;
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+  }
+  
+  .cta__buttons {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 640px) {
+    .cta__buttons {
+      flex-direction: row;
+    }
+  }
+  
+  .cta__btn-arrow {
+    width: 16px;
+    height: 16px;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .cta__btn:hover .cta__btn-arrow {
+    transform: translateX(4px);
+  }
+  
+  .cta__features {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  
+  .cta__feature {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+</style>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta__container">
+      <div class="cta__card animate-on-scroll" style="opacity: 0; animation: fadeInUp 0.5s ease-out forwards;">
+        <div class="cta__accent"></div>
+        
+        <h2 class="cta__title font-sora">{{ section.settings.title | default: 'Klaar om je schuur te transformeren?' }}</h2>
+        <p class="cta__description">{{ section.settings.description | default: 'Begin dit weekend nog. Download het bouwplan en maak een einde aan de chaos.' }}</p>
+        
+        <div class="cta__buttons">
+          <a href="{{ section.settings.primary_button_link | default: '#producten' }}" class="btn btn-brand btn-lg cta__btn">
+            {{ section.settings.primary_button_text | default: 'Download voor €19' }}
+            <svg class="cta__btn-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="{{ section.settings.secondary_button_link | default: '#producten' }}" class="btn btn-brand-outline btn-lg">
+            {{ section.settings.secondary_button_text | default: 'Bekijk voorbeelden' }}
+          </a>
+        </div>
+        
+        <div class="cta__features">
+          {% for block in section.blocks %}
+            <span class="cta__feature">
+              ✓ {{ block.settings.text }}
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Call to Action",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Klaar om je schuur te transformeren?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Beschrijving",
+      "default": "Begin dit weekend nog. Download het bouwplan en maak een einde aan de chaos."
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primaire knop tekst",
+      "default": "Download voor €19"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primaire knop link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secundaire knop tekst",
+      "default": "Bekijk voorbeelden"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secundaire knop link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Tekst",
+          "default": "Feature tekst"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call to Action",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "text": "500+ tevreden klanten"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "Direct downloaden"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "100% garantie"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
