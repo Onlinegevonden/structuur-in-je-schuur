@@ -1,0 +1,111 @@
+<style>
+.page-about{background-color:var(--background)}.page-hero{padding:4rem 0;border-bottom:1px solid var(--border);background:linear-gradient(to bottom,rgba(255,249,230,.3),var(--background))}@media(min-width:1024px){.page-hero{padding:6rem 0}}.page-hero__back{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;font-size:.875rem;color:var(--muted-foreground);transition:color .2s}.page-hero__back:hover{color:var(--foreground)}.page-hero__back-icon{width:1rem;height:1rem}.page-hero__content{max-width:48rem}.page-hero__title{font-size:1.875rem;font-weight:700}@media(min-width:768px){.page-hero__title{font-size:2.25rem}}@media(min-width:1024px){.page-hero__title{font-size:3rem}}.page-hero__subtitle{margin-top:1rem;font-size:1.125rem;color:var(--muted-foreground);line-height:1.7}.about-content{padding:4rem 0}@media(min-width:1024px){.about-content{padding:6rem 0}}.about-content__container{max-width:48rem;margin:0 auto}.about-story h2{font-size:1.5rem;font-weight:700;margin-bottom:1rem}.about-story p{color:var(--muted-foreground);line-height:1.8;margin-bottom:1rem}.about-story em{font-style:italic}.about-values{margin-top:4rem}.about-values__title{font-size:1.5rem;font-weight:700;margin-bottom:2rem}.about-values__grid{display:grid;gap:1.5rem}@media(min-width:640px){.about-values__grid{grid-template-columns:repeat(2,1fr)}}.value-card{padding:1.5rem;border:1px solid var(--border);border-radius:.75rem;background-color:var(--card)}.value-card__icon-wrapper{display:flex;align-items:center;justify-content:center;width:3rem;height:3rem;margin-bottom:1rem;background-color:var(--brand-muted);border-radius:.5rem}.value-card__icon{width:1.5rem;height:1.5rem;color:var(--brand)}.value-card__title{font-family:'Sora',sans-serif;font-weight:600;margin-bottom:.5rem;color:var(--foreground)}.value-card__text{font-size:.875rem;color:var(--muted-foreground);line-height:1.6}.about-mission{margin-top:4rem;padding:2rem;border:2px solid var(--brand);border-radius:1rem;background:linear-gradient(to bottom right,rgba(255,249,230,.5),var(--background))}.about-mission__title{font-size:1.25rem;font-weight:700;margin-bottom:1rem;color:var(--foreground)}.about-mission__text{font-size:1.125rem;color:var(--muted-foreground);line-height:1.7}.about-mission__tagline{margin-top:1rem;font-weight:600;color:var(--foreground)}.about-cta{padding:4rem 0;border-top:1px solid var(--border);background-color:rgba(255,249,230,.3);text-align:center}.about-cta__title{font-size:1.5rem;font-weight:700;margin-bottom:1rem}.about-cta__text{color:var(--muted-foreground);margin-bottom:1.5rem}.about-cta__btn{display:inline-flex;align-items:center;justify-content:center;height:2.75rem;padding:0 1.5rem;font-weight:500;color:var(--brand-foreground);background-color:var(--brand);border-radius:.5rem;transition:background-color .2s}.about-cta__btn:hover{background-color:#E6B800}
+</style>
+
+<div class="page-about">
+  <section class="page-hero">
+    <div class="container">
+      <a href="/" class="page-hero__back">
+        <svg class="page-hero__back-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        Terug naar home
+      </a>
+      <div class="page-hero__content">
+        <h1 class="page-hero__title font-sora">{{ section.settings.title }}</h1>
+        <p class="page-hero__subtitle">{{ section.settings.subtitle }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="about-content__container">
+        <div class="about-story">
+          <h2 class="font-sora">{{ section.settings.story_title }}</h2>
+          <p>{{ section.settings.story_p1 }}</p>
+          <p>{{ section.settings.story_p2 }}</p>
+          <p>{{ section.settings.story_p3 }}</p>
+        </div>
+
+        <div class="about-values">
+          <h2 class="about-values__title font-sora">Waar ik voor sta</h2>
+          <div class="about-values__grid">
+            {% for block in section.blocks %}
+              {% if block.type == 'value' %}
+                <div class="value-card" {{ block.shopify_attributes }}>
+                  <div class="value-card__icon-wrapper">
+                    {% case block.settings.icon %}
+                      {% when 'target' %}<svg class="value-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                      {% when 'heart' %}<svg class="value-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                      {% when 'hammer' %}<svg class="value-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                      {% when 'lightbulb' %}<svg class="value-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    {% endcase %}
+                  </div>
+                  <h3 class="value-card__title">{{ block.settings.title }}</h3>
+                  <p class="value-card__text">{{ block.settings.text }}</p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="about-mission">
+          <h2 class="about-mission__title font-sora">{{ section.settings.mission_title }}</h2>
+          <p class="about-mission__text">{{ section.settings.mission_text }}</p>
+          <p class="about-mission__tagline">{{ section.settings.mission_tagline }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-cta">
+    <div class="container">
+      <h2 class="about-cta__title font-sora">{{ section.settings.cta_title }}</h2>
+      <p class="about-cta__text">{{ section.settings.cta_text }}</p>
+      <a href="{{ section.settings.cta_link }}" class="about-cta__btn">{{ section.settings.cta_button }}</a>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Over ons pagina",
+  "settings": [
+    {"type": "text", "id": "title", "label": "Titel", "default": "Over mij"},
+    {"type": "textarea", "id": "subtitle", "label": "Ondertitel", "default": "De mens achter Structuur in je Schuur — en waarom ik geloof dat iedereen zijn eigen opbergoplossing kan bouwen."},
+    {"type": "header", "content": "Verhaal"},
+    {"type": "text", "id": "story_title", "label": "Verhaal titel", "default": "Van chaos naar structuur"},
+    {"type": "textarea", "id": "story_p1", "label": "Paragraaf 1", "default": "Het begon in mijn eigen schuur. Dozen die omvielen, gereedschap dat zoek was, en kerstversiering die ik pas in februari terugvond. Ik had genoeg van de rommel en besloot er iets aan te doen."},
+    {"type": "textarea", "id": "story_p2", "label": "Paragraaf 2", "default": "Na weken zoeken vond ik geen betaalbare oplossing die bij mijn ruimte paste. Dus deed ik wat elke Nederlander zou doen: ik bouwde het zelf. Met mijn basisgereedschap en wat YouTube-video's maakte ik mijn eerste krattenkast."},
+    {"type": "textarea", "id": "story_p3", "label": "Paragraaf 3", "default": "Het resultaat? Een opgeruimde schuur, meer ruimte, en buren die vroegen: \"Waar heb je die gekocht?\""},
+    {"type": "header", "content": "Missie"},
+    {"type": "text", "id": "mission_title", "label": "Missie titel", "default": "Mijn missie"},
+    {"type": "textarea", "id": "mission_text", "label": "Missie tekst", "default": "Ik wil dat elke Nederlander met een schuur, garage of berging weet dat je geen timmerman hoeft te zijn om structuur te creëren. Met de juiste instructies en een vrij weekend bouw je iets waar je jarenlang plezier van hebt."},
+    {"type": "text", "id": "mission_tagline", "label": "Missie tagline", "default": "Van chaos naar controle — en dat gevoel gun ik iedereen."},
+    {"type": "header", "content": "CTA"},
+    {"type": "text", "id": "cta_title", "label": "CTA titel", "default": "Klaar om te beginnen?"},
+    {"type": "text", "id": "cta_text", "label": "CTA tekst", "default": "Bekijk mijn bouwplannen en geef je schuur de structuur die het verdient."},
+    {"type": "text", "id": "cta_button", "label": "CTA knop", "default": "Bekijk bouwplannen"},
+    {"type": "url", "id": "cta_link", "label": "CTA link", "default": "/"}
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Waarde",
+      "settings": [
+        {"type": "select", "id": "icon", "label": "Icoon", "options": [{"value": "target", "label": "Target"},{"value": "heart", "label": "Hart"},{"value": "hammer", "label": "Hamer"},{"value": "lightbulb", "label": "Lamp"}], "default": "target"},
+        {"type": "text", "id": "title", "label": "Titel", "default": "Praktisch & haalbaar"},
+        {"type": "textarea", "id": "text", "label": "Tekst", "default": "Geen ingewikkelde technieken of duur gereedschap."}
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Over ons pagina",
+    "blocks": [
+      {"type": "value", "settings": {"icon": "target", "title": "Praktisch & haalbaar", "text": "Geen ingewikkelde technieken of duur gereedschap. Mijn bouwplannen zijn ontworpen voor gewone mensen met een basisgereedschapset."}},
+      {"type": "value", "settings": {"icon": "heart", "title": "Eerlijk & transparant", "text": "Geen verborgen kosten of misleidende beloftes. Ik vertel precies wat je nodig hebt en wat het kost — inclusief geld-terug-garantie."}},
+      {"type": "value", "settings": {"icon": "hammer", "title": "Zelf doen = voldoening", "text": "Er gaat niets boven het gevoel iets met je eigen handen te maken. Dat gevoel wil ik met zoveel mogelijk mensen delen."}},
+      {"type": "value", "settings": {"icon": "lightbulb", "title": "Altijd aan het verbeteren", "text": "Op basis van feedback van bouwers verbeter ik mijn plannen continu. Kocht je een plan? Dan krijg je alle updates gratis."}}
+    ]
+  }]
+}
+{% endschema %}
