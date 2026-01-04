@@ -1,0 +1,66 @@
+<section class="section section--border">
+  <div class="container">
+    <div class="guarantee-box" style="max-width: 56rem; margin: 0 auto;">
+      <div class="guarantee-box__header">
+        <div class="guarantee-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2 class="guarantee-box__title">{{ section.settings.title }}</h2>
+      </div>
+      
+      <p class="guarantee-box__text">{{ section.settings.description }}</p>
+
+      <div class="guarantee-grid">
+        {%- for block in section.blocks -%}
+        <div class="guarantee-item" {{ block.shopify_attributes }}>
+          <div class="guarantee-item__icon">
+            {%- case block.settings.icon -%}
+              {%- when 'users' -%}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              {%- when 'hammer' -%}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/></svg>
+              {%- when 'award' -%}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            {%- endcase -%}
+          </div>
+          <h3 class="guarantee-item__title">{{ block.settings.title }}</h3>
+          <p class="guarantee-item__text">{{ block.settings.description }}</p>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Garantie sectie",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "100% Slagingsgarantie" },
+    { "type": "textarea", "id": "description", "label": "Beschrijving", "default": "We begrijpen dat een doe-het-zelf project spannend kan zijn. Daarom hebben we dit bouwplan zo ontworpen dat <strong>iedereen succesvol kan bouwen</strong> — van complete beginner tot ervaren klusser." }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Garantie item",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icoon", "options": [
+          { "value": "users", "label": "Mensen" },
+          { "value": "hammer", "label": "Hamer" },
+          { "value": "award", "label": "Award" }
+        ], "default": "users" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Item" },
+        { "type": "textarea", "id": "description", "label": "Beschrijving", "default": "Beschrijving" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Garantie sectie",
+    "blocks": [
+      { "type": "item", "settings": { "icon": "users", "title": "Voor beginners", "description": "Nooit eerder geklusd? Geen probleem. Elke stap is uitgelegd alsof het je eerste project is." } },
+      { "type": "item", "settings": { "icon": "hammer", "title": "Voor ervaren klussers", "description": "Snelle overzichten en directe zaaglijsten zodat je meteen aan de slag kunt." } },
+      { "type": "item", "settings": { "icon": "award", "title": "Gegarandeerd succes", "description": "Lukt het niet? 100% geld terug, geen vragen. Maar dat is nog nooit gebeurd." } }
+    ]
+  }]
+}
+{% endschema %}

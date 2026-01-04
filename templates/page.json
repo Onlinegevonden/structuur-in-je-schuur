@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "header": { "type": "page-header" },
+    "content": { "type": "page-content" },
+    "cta": { "type": "page-cta" }
+  },
+  "order": ["header", "content", "cta"]
+}

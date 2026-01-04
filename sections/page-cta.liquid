@@ -1,0 +1,22 @@
+<section class="page-cta">
+  <div class="container">
+    <h2 class="page-cta__title">{{ section.settings.title }}</h2>
+    <p class="page-cta__description">{{ section.settings.description }}</p>
+    {%- if section.settings.button_text != blank -%}
+    <a href="{{ section.settings.button_url }}" class="btn btn-brand">{{ section.settings.button_text }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pagina CTA",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Klaar om te beginnen?" },
+    { "type": "textarea", "id": "description", "label": "Beschrijving", "default": "Bekijk mijn bouwplannen en geef je schuur de structuur die het verdient." },
+    { "type": "text", "id": "button_text", "label": "Knop tekst", "default": "Bekijk bouwplannen" },
+    { "type": "url", "id": "button_url", "label": "Knop URL", "default": "/collections/all" }
+  ],
+  "presets": [{ "name": "Pagina CTA" }]
+}
+{% endschema %}

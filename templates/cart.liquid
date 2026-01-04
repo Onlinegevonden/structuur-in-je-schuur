@@ -1,0 +1,41 @@
+<section class="page-content">
+  <div class="container">
+    <h1 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 2rem;">Winkelwagen</h1>
+    
+    {%- if cart.item_count > 0 -%}
+    <form action="{{ routes.cart_url }}" method="post">
+      <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+        {%- for item in cart.items -%}
+        <div class="card cart-item">
+          <div class="cart-item__image">
+            {%- if item.image -%}
+            <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title }}">
+            {%- endif -%}
+          </div>
+          <div class="cart-item__info">
+            <h3 class="cart-item__title"><a href="{{ item.url }}">{{ item.product.title }}</a></h3>
+            <p class="cart-item__variant">{{ item.variant.title }}</p>
+            <p class="cart-item__price">{{ item.final_line_price | money }}</p>
+          </div>
+          <a href="{{ item.url_to_remove }}" class="cart-item__remove">Verwijder</a>
+        </div>
+        {%- endfor -%}
+      </div>
+      
+      <div class="cart-total">
+        <p><strong>Totaal:</strong> {{ cart.total_price | money }}</p>
+        <button type="submit" name="checkout" class="btn btn-brand btn-lg">
+          Afrekenen
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+    {%- else -%}
+    <div class="cart-empty">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <p>Je winkelwagen is leeg</p>
+      <a href="/collections/all" class="btn btn-brand">Bekijk bouwplannen</a>
+    </div>
+    {%- endif -%}
+  </div>
+</section>

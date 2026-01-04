@@ -1,0 +1,106 @@
+<section class="page-content">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-info__title">{{ section.settings.title }}</h2>
+        <p class="contact-info__description">{{ section.settings.description }}</p>
+        
+        <div class="contact-methods">
+          {%- for block in section.blocks -%}
+          <div class="contact-method" {{ block.shopify_attributes }}>
+            <div class="contact-method__icon">
+              {%- case block.settings.icon -%}
+                {%- when 'mail' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                {%- when 'message-circle' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
+                {%- when 'clock' -%}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {%- endcase -%}
+            </div>
+            <div>
+              <h3 class="contact-method__title">{{ block.settings.title }}</h3>
+              <p class="contact-method__value">
+                {%- if block.settings.url != blank -%}
+                <a href="{{ block.settings.url }}">{{ block.settings.value }}</a>
+                {%- else -%}
+                {{ block.settings.value }}
+                {%- endif -%}
+              </p>
+            </div>
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 class="contact-form__title">{{ section.settings.form_title }}</h3>
+        {%- form 'contact' -%}
+          {%- if form.posted_successfully? -%}
+          <p style="color: green; margin-bottom: 1rem;">Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.</p>
+          {%- endif -%}
+          {%- if form.errors -%}
+          <div style="color: red; margin-bottom: 1rem;">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="form-row form-row--2col">
+            <div class="form-group">
+              <label for="name" class="form-label">Naam</label>
+              <input type="text" id="name" name="contact[name]" class="form-input" placeholder="Je naam" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" id="email" name="contact[email]" class="form-input" placeholder="je@email.nl" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="form-label">Onderwerp</label>
+            <input type="text" id="subject" name="contact[subject]" class="form-input" placeholder="Waar gaat je vraag over?" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Bericht</label>
+            <textarea id="message" name="contact[body]" class="form-textarea" placeholder="Vertel ons meer..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-brand" style="width: 100%;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            Verstuur bericht
+          </button>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Hoe kunnen we helpen?" },
+    { "type": "textarea", "id": "description", "label": "Beschrijving", "default": "Of je nu een vraag hebt over een bouwplan, hulp nodig hebt tijdens het bouwen, of gewoon wilt sparren over je project — we horen graag van je." },
+    { "type": "text", "id": "form_title", "label": "Formulier titel", "default": "Stuur een bericht" }
+  ],
+  "blocks": [
+    {
+      "type": "method",
+      "name": "Contact methode",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icoon", "options": [
+          { "value": "mail", "label": "E-mail" },
+          { "value": "message-circle", "label": "Bericht" },
+          { "value": "clock", "label": "Klok" }
+        ], "default": "mail" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "E-mail" },
+        { "type": "text", "id": "value", "label": "Waarde", "default": "info@structuurinjeschuur.nl" },
+        { "type": "text", "id": "url", "label": "URL (optioneel)", "default": "mailto:info@structuurinjeschuur.nl" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Contact",
+    "blocks": [
+      { "type": "method", "settings": { "icon": "mail", "title": "E-mail", "value": "info@structuurinjeschuur.nl", "url": "mailto:info@structuurinjeschuur.nl" } },
+      { "type": "method", "settings": { "icon": "message-circle", "title": "Social Media", "value": "Volg ons op Instagram voor inspiratie en tips", "url": "" } },
+      { "type": "method", "settings": { "icon": "clock", "title": "Reactietijd", "value": "We reageren binnen 24 uur op werkdagen", "url": "" } }
+    ]
+  }]
+}
+{% endschema %}

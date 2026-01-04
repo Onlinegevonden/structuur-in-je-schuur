@@ -1,0 +1,63 @@
+<section class="section section--muted section--border">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">{{ section.settings.title }}</h2>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+        <div class="product__stars">
+          {%- for i in (1..5) -%}
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" class="product__star product__star--filled"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          {%- endfor -%}
+        </div>
+        <span style="color: var(--muted-foreground);">{{ section.settings.rating }} gemiddeld uit {{ section.blocks.size }} reviews</span>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      {%- for block in section.blocks -%}
+      <div class="review-card" {{ block.shopify_attributes }}>
+        <div class="review-card__header">
+          <div class="review-card__stars">
+            {%- for i in (1..5) -%}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="{% if i <= block.settings.rating %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="2" class="product__star {% if i <= block.settings.rating %}product__star--filled{% else %}product__star--empty{% endif %}"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            {%- endfor -%}
+          </div>
+          <span class="review-card__date">{{ block.settings.date }}</span>
+        </div>
+        <p class="review-card__text">{{ block.settings.text }}</p>
+        <p class="review-card__author">— {{ block.settings.author }}</p>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product reviews",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Wat klanten zeggen" },
+    { "type": "text", "id": "rating", "label": "Gemiddelde rating", "default": "4.8" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Rating", "default": 5 },
+        { "type": "text", "id": "date", "label": "Datum", "default": "2 weken geleden" },
+        { "type": "textarea", "id": "text", "label": "Review tekst", "default": "Geweldig bouwplan!" },
+        { "type": "text", "id": "author", "label": "Auteur", "default": "Klant" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Product reviews",
+    "blocks": [
+      { "type": "review", "settings": { "rating": 5, "date": "2 weken geleden", "text": "Super duidelijk bouwplan! In een middag gebouwd en nu heb ik eindelijk overzicht in mijn garage.", "author": "Peter V." } },
+      { "type": "review", "settings": { "rating": 5, "date": "1 maand geleden", "text": "Precies wat ik zocht. De zaaglijst is heel handig, de medewerker bij Gamma kon alles direct voor me zagen.", "author": "Sandra M." } },
+      { "type": "review", "settings": { "rating": 4, "date": "3 weken geleden", "text": "Goed bouwplan, stevig resultaat. Enige tip: neem iets meer schroeven mee dan aangegeven.", "author": "Mark de J." } },
+      { "type": "review", "settings": { "rating": 5, "date": "1 week geleden", "text": "Als beginner was dit perfect. Alle stappen zijn duidelijk uitgelegd met foto's.", "author": "Lisa K." } }
+    ]
+  }]
+}
+{% endschema %}

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "header": { "type": "page-header", "settings": { "description": "De mens achter Structuur in je Schuur — en waarom ik geloof dat iedereen zijn eigen opbergoplossing kan bouwen." } },
+    "content": { "type": "page-content" },
+    "cta": { "type": "page-cta" }
+  },
+  "order": ["header", "content", "cta"]
+}

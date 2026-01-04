@@ -2,10 +2,95 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "settings": {}
+      "blocks": {
+        "i1": { "type": "include", "settings": { "text": "Complete zaaglijst & materiaallijst (PDF)" } },
+        "i2": { "type": "include", "settings": { "text": "Stap-voor-stap instructies met foto's" } },
+        "i3": { "type": "include", "settings": { "text": "5 configuraties (2x2 tot 4x4)" } },
+        "i4": { "type": "include", "settings": { "text": "Levenslange updates" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4"],
+      "settings": {
+        "product_type": "Bouwplan",
+        "rating": 5,
+        "review_count": 24,
+        "includes_title": "Dit krijg je:"
+      }
+    },
+    "features": {
+      "type": "product-features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "file-text", "title": "Complete zaaglijst", "description": "Exacte maten voor al het hout, klaar om mee te nemen naar de bouwmarkt" } },
+        "f2": { "type": "feature", "settings": { "icon": "package", "title": "Materiaallijst", "description": "Alle benodigde materialen met artikelnummers voor Gamma, Praxis & Hornbach" } },
+        "f3": { "type": "feature", "settings": { "icon": "ruler", "title": "Stap-voor-stap instructies", "description": "Duidelijke foto's en uitleg bij elke stap van het bouwproces" } },
+        "f4": { "type": "feature", "settings": { "icon": "box", "title": "Meerdere configuraties", "description": "Van 2x2 tot 4x4 kratten - kies wat past in jouw ruimte" } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"],
+      "settings": {
+        "title": "Wat zit er in het bouwplan?",
+        "subtitle": "Alles wat je nodig hebt om direct aan de slag te gaan"
+      }
+    },
+    "guarantee": {
+      "type": "product-guarantee",
+      "blocks": {
+        "g1": { "type": "item", "settings": { "icon": "users", "title": "Voor beginners", "description": "Nooit eerder geklusd? Geen probleem. Elke stap is uitgelegd alsof het je eerste project is." } },
+        "g2": { "type": "item", "settings": { "icon": "hammer", "title": "Voor ervaren klussers", "description": "Snelle overzichten en directe zaaglijsten zodat je meteen aan de slag kunt." } },
+        "g3": { "type": "item", "settings": { "icon": "award", "title": "Gegarandeerd succes", "description": "Lukt het niet? 100% geld terug, geen vragen. Maar dat is nog nooit gebeurd." } }
+      },
+      "block_order": ["g1", "g2", "g3"],
+      "settings": {
+        "title": "100% Slagingsgarantie",
+        "description": "We begrijpen dat een doe-het-zelf project spannend kan zijn. Daarom hebben we dit bouwplan zo ontworpen dat <strong>iedereen succesvol kan bouwen</strong> — van complete beginner tot ervaren klusser."
+      }
+    },
+    "specs": {
+      "type": "product-specs",
+      "blocks": {
+        "s1": { "type": "spec", "settings": { "label": "Geschikt voor", "value": "IKEA Samla 45L boxen" } },
+        "s2": { "type": "spec", "settings": { "label": "Configuraties", "value": "2x2, 2x3, 3x3, 3x4, 4x4" } },
+        "s3": { "type": "spec", "settings": { "label": "Benodigde tijd", "value": "2-4 uur" } },
+        "s4": { "type": "spec", "settings": { "label": "Moeilijkheidsgraad", "value": "Beginner" } },
+        "s5": { "type": "spec", "settings": { "label": "Gereedschap", "value": "Accuboormachine, zaag, meetlint" } },
+        "s6": { "type": "spec", "settings": { "label": "Bestandsformaat", "value": "PDF (direct downloaden)" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6"],
+      "settings": { "title": "Specificaties" }
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "rating": 5, "date": "2 weken geleden", "text": "Super duidelijk bouwplan! In een middag gebouwd en nu heb ik eindelijk overzicht in mijn garage.", "author": "Peter V." } },
+        "r2": { "type": "review", "settings": { "rating": 5, "date": "1 maand geleden", "text": "Precies wat ik zocht. De zaaglijst is heel handig, de medewerker bij Gamma kon alles direct voor me zagen.", "author": "Sandra M." } },
+        "r3": { "type": "review", "settings": { "rating": 4, "date": "3 weken geleden", "text": "Goed bouwplan, stevig resultaat. Enige tip: neem iets meer schroeven mee dan aangegeven.", "author": "Mark de J." } },
+        "r4": { "type": "review", "settings": { "rating": 5, "date": "1 week geleden", "text": "Als beginner was dit perfect. Alle stappen zijn duidelijk uitgelegd met foto's.", "author": "Lisa K." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": { "title": "Wat klanten zeggen", "rating": "4.8" }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Welke IKEA boxen passen in dit rek?", "answer": "Het rek is specifiek ontworpen voor de IKEA Samla 45 liter boxen (39x57x28 cm). Dit zijn de populairste opbergboxen en perfect voor garage-opslag." } },
+        "f2": { "type": "faq", "settings": { "question": "Welk hout heb ik nodig?", "answer": "Het bouwplan specificeert standaard vurenhout dat je bij elke bouwmarkt kunt kopen. We geven exacte maten en zelfs artikelnummers voor Gamma, Praxis en Hornbach." } },
+        "f3": { "type": "faq", "settings": { "question": "Hoeveel kost het hout ongeveer?", "answer": "Afhankelijk van de configuratie kost het hout tussen de €40 en €100. Een 3x3 configuratie kost gemiddeld €65 aan materiaal." } },
+        "f4": { "type": "faq", "settings": { "question": "Kan ik het rek later uitbreiden?", "answer": "Ja! Het ontwerp is modulair. Je kunt later extra secties toevoegen zonder het bestaande rek aan te passen." } },
+        "f5": { "type": "faq", "settings": { "question": "Wat als ik niet tevreden ben?", "answer": "We bieden 100% geld-terug-garantie. Niet tevreden? Stuur een mail en je krijgt je geld binnen 24 uur terug." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5"],
+      "settings": { "title": "Veelgestelde vragen over dit product", "subtitle": "" }
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "title": "Klaar om te bouwen?",
+        "description": "Download het bouwplan en begin dit weekend nog.",
+        "button1_text": "Koop nu",
+        "button1_url": "",
+        "button2_text": "",
+        "button2_url": "",
+        "trust_text": ""
+      }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main", "features", "guarantee", "specs", "reviews", "faq", "cta"]
 }

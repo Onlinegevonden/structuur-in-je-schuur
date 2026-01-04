@@ -1,18 +1,23 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "page-contact",
-      "settings": {}
+    "header": {
+      "type": "page-header",
+      "settings": { "description": "Heb je een vraag of wil je meer weten? We staan voor je klaar en reageren meestal binnen 24 uur." }
+    },
+    "contact": {
+      "type": "contact",
+      "blocks": {
+        "m1": { "type": "method", "settings": { "icon": "mail", "title": "E-mail", "value": "info@structuurinjeschuur.nl", "url": "mailto:info@structuurinjeschuur.nl" } },
+        "m2": { "type": "method", "settings": { "icon": "message-circle", "title": "Social Media", "value": "Volg ons op Instagram voor inspiratie en tips", "url": "" } },
+        "m3": { "type": "method", "settings": { "icon": "clock", "title": "Reactietijd", "value": "We reageren binnen 24 uur op werkdagen", "url": "" } }
+      },
+      "block_order": ["m1", "m2", "m3"],
+      "settings": {
+        "title": "Hoe kunnen we helpen?",
+        "description": "Of je nu een vraag hebt over een bouwplan, hulp nodig hebt tijdens het bouwen, of gewoon wilt sparren over je project — we horen graag van je.",
+        "form_title": "Stuur een bericht"
+      }
     }
   },
-  "order": ["main"]
+  "order": ["header", "contact"]
 }

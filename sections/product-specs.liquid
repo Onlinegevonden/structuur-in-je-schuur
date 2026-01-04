@@ -1,0 +1,46 @@
+<section class="section section--border">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="specs-table">
+      {%- for block in section.blocks -%}
+      <div class="specs-row" {{ block.shopify_attributes }}>
+        <span class="specs-label">{{ block.settings.label }}</span>
+        <span class="specs-value">{{ block.settings.value }}</span>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Specificaties",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titel", "default": "Specificaties" }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Specificatie",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Label" },
+        { "type": "text", "id": "value", "label": "Waarde", "default": "Waarde" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Specificaties",
+    "blocks": [
+      { "type": "spec", "settings": { "label": "Geschikt voor", "value": "IKEA Samla 45L boxen" } },
+      { "type": "spec", "settings": { "label": "Configuraties", "value": "2x2, 2x3, 3x3, 3x4, 4x4" } },
+      { "type": "spec", "settings": { "label": "Benodigde tijd", "value": "2-4 uur" } },
+      { "type": "spec", "settings": { "label": "Moeilijkheidsgraad", "value": "Beginner" } },
+      { "type": "spec", "settings": { "label": "Gereedschap", "value": "Accuboormachine, zaag, meetlint" } },
+      { "type": "spec", "settings": { "label": "Bestandsformaat", "value": "PDF (direct downloaden)" } }
+    ]
+  }]
+}
+{% endschema %}
