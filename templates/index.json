@@ -1,17 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {
-        "badge_text": "Digitale bouwplannen",
-        "title_line1": "Van chaos naar controle",
-        "title_line2": "in één weekend",
-        "description": "Praktische bouwplannen voor je schuur of garage. Speciaal ontworpen voor Nederlandse bouwmarkten en IKEA opbergboxen.",
-        "primary_button_text": "Bekijk bouwplannen",
-        "secondary_button_text": "Hoe werkt het?",
-        "price_label": "Vanaf",
-        "price_text": "€19"
-      },
       "blocks": {
         "feature-1": {
           "type": "feature",
@@ -35,15 +34,28 @@
           }
         }
       },
-      "block_order": ["feature-1", "feature-2", "feature-3"]
+      "block_order": [
+        "feature-1",
+        "feature-2",
+        "feature-3"
+      ],
+      "settings": {
+        "badge_text": "Digitale bouwplannen",
+        "title_line1": "Van chaos naar controle",
+        "title_line2": "in één weekend",
+        "description": "Praktische bouwplannen voor je schuur of garage. Speciaal ontworpen voor Nederlandse bouwmarkten en IKEA opbergboxen.",
+        "primary_button_text": "Bekijk bouwplannen",
+        "primary_button_link": "",
+        "secondary_button_text": "Hoe werkt het?",
+        "secondary_button_link": "",
+        "image": "shopify://shop_images/structuur_in_je_schuur.jpg",
+        "image_alt": "Krattenkast bouwplan - houten opbergrek met IKEA Samla boxen",
+        "price_label": "Vanaf",
+        "price_text": "€8,99"
+      }
     },
     "benefits": {
       "type": "benefits",
-      "settings": {
-        "badge_text": "Waarom onze bouwplannen",
-        "title": "Ontworpen voor succes",
-        "subtitle": "Onze bouwplannen zijn door honderden Nederlandse klussers getest en verfijnd."
-      },
       "blocks": {
         "benefit-1": {
           "type": "benefit",
@@ -94,15 +106,22 @@
           }
         }
       },
-      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5", "benefit-6"]
+      "block_order": [
+        "benefit-1",
+        "benefit-2",
+        "benefit-3",
+        "benefit-4",
+        "benefit-5",
+        "benefit-6"
+      ],
+      "settings": {
+        "badge_text": "Waarom onze bouwplannen",
+        "title": "Ontworpen voor succes",
+        "subtitle": "Onze bouwplannen zijn door honderden Nederlandse klussers getest en verfijnd."
+      }
     },
     "how-it-works": {
       "type": "how-it-works",
-      "settings": {
-        "badge_text": "Zo simpel is het",
-        "title": "Hoe werkt het?",
-        "subtitle": "Van aankoop tot opgeruimde schuur in vier eenvoudige stappen."
-      },
       "blocks": {
         "step-1": {
           "type": "step",
@@ -137,15 +156,20 @@
           }
         }
       },
-      "block_order": ["step-1", "step-2", "step-3", "step-4"]
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4"
+      ],
+      "settings": {
+        "badge_text": "Zo simpel is het",
+        "title": "Hoe werkt het?",
+        "subtitle": "Van aankoop tot opgeruimde schuur in vier eenvoudige stappen."
+      }
     },
     "products": {
       "type": "featured-products",
-      "settings": {
-        "badge_text": "Bouwplannen",
-        "title": "Onze populairste bouwplannen",
-        "subtitle": "Elk bouwplan is uitgebreid getest en bevat alles wat je nodig hebt om direct aan de slag te gaan."
-      },
       "blocks": {
         "coming-1": {
           "type": "coming_soon",
@@ -164,15 +188,20 @@
           }
         }
       },
-      "block_order": ["coming-1", "coming-2"]
+      "block_order": [
+        "coming-1",
+        "coming-2"
+      ],
+      "settings": {
+        "badge_text": "Bouwplannen",
+        "title": "Onze populairste bouwplannen",
+        "subtitle": "Elk bouwplan is uitgebreid getest en bevat alles wat je nodig hebt om direct aan de slag te gaan.",
+        "collection": "",
+        "fallback_product_link": ""
+      }
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {
-        "badge_text": "Klanten aan het woord",
-        "title": "Wat anderen zeggen",
-        "subtitle": "Honderden Nederlanders gingen je voor. Dit is wat ze ervan vonden."
-      },
       "blocks": {
         "testimonial-1": {
           "type": "testimonial",
@@ -199,14 +228,19 @@
           }
         }
       },
-      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"]
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3"
+      ],
+      "settings": {
+        "badge_text": "Klanten aan het woord",
+        "title": "Wat anderen zeggen",
+        "subtitle": "Honderden Nederlanders gingen je voor. Dit is wat ze ervan vonden."
+      }
     },
     "faq": {
       "type": "faq",
-      "settings": {
-        "title": "Veelgestelde vragen",
-        "subtitle": "Alles wat je wilt weten over de bouwplannen"
-      },
       "blocks": {
         "q1": {
           "type": "question",
@@ -251,16 +285,21 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6"]
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "title": "Veelgestelde vragen",
+        "subtitle": "Alles wat je wilt weten over de bouwplannen"
+      }
     },
     "cta": {
       "type": "cta",
-      "settings": {
-        "title": "Klaar om je schuur te transformeren?",
-        "description": "Begin dit weekend nog. Download het bouwplan en maak een einde aan de chaos.",
-        "primary_button_text": "Download voor €19",
-        "secondary_button_text": "Bekijk voorbeelden"
-      },
       "blocks": {
         "f1": {
           "type": "feature",
@@ -281,7 +320,19 @@
           }
         }
       },
-      "block_order": ["f1", "f2", "f3"]
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "settings": {
+        "title": "Klaar om je schuur te transformeren?",
+        "description": "Begin dit weekend nog. Download het bouwplan en maak een einde aan de chaos.",
+        "primary_button_text": "Download voor €19",
+        "primary_button_link": "",
+        "secondary_button_text": "Bekijk voorbeelden",
+        "secondary_button_link": ""
+      }
     }
   },
   "order": [
