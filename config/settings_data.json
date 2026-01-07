@@ -1,7 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_brand": "#FFCC00",
     "color_background": "#ffffff",
-    "color_foreground": "#1f2937"
+    "color_foreground": "#1f2937",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "nav_item_ayJ4A7": {
+            "type": "nav_item",
+            "settings": {
+              "label": "Bouwplannen",
+              "url": "shopify://collections/bouwtekeningen"
+            }
+          },
+          "nav_item_Td9bBQ": {
+            "type": "nav_item",
+            "settings": {
+              "label": "Hoe werkt het?",
+              "url": ""
+            }
+          },
+          "nav_item_36ixRx": {
+            "type": "nav_item",
+            "settings": {
+              "label": "Over",
+              "url": "shopify://pages/over"
+            }
+          }
+        },
+        "block_order": [
+          "nav_item_ayJ4A7",
+          "nav_item_Td9bBQ",
+          "nav_item_36ixRx"
+        ],
+        "settings": {
+          "logo_letter": "S",
+          "logo_text": "Structuur in je Schuur",
+          "cta_text": "Bekijk bouwplannen",
+          "cta_url": "shopify://collections/all"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "menu_column_XyXJ6h": {
+            "type": "menu_column",
+            "settings": {
+              "title": "Menu",
+              "menu": "main-menu"
+            }
+          }
+        },
+        "block_order": [
+          "menu_column_XyXJ6h"
+        ],
+        "settings": {
+          "logo_letter": "S",
+          "logo_text": "Structuur in je Schuur",
+          "description": "Van chaos naar controle in één weekend. Praktische bouwplannen voor Nederlandse doe-het-zelvers die hun schuur of garage willen organiseren.",
+          "email": "info@structuurinjeschuur.nl",
+          "instagram": "",
+          "copyright": "© 2026 Structuur in je Schuur. Alle rechten voorbehouden.",
+          "privacy_text": "Privacybeleid",
+          "privacy_url": "",
+          "terms_text": "Algemene voorwaarden",
+          "terms_url": ""
+        }
+      }
+    },
+    "content_for_index": []
   }
 }
