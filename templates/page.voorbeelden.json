@@ -1,7 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "examples": {
       "type": "examples",
+      "blocks": {
+        "photo_RirERW": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/BFFEA8B0-0C55-4AD1-AE20-BBAC9FF1D06C_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_nMD6Tz": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/AF301E14-FC04-4CDA-ABEF-F91D67700EA9_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_m3KQbQ": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/E7400E84-CFFD-42BA-ADB0-631612EBFC40_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_Fxtttz": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/C467C803-17D9-48E6-8DF8-30A1130B24A2_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_A6Pcg6": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/6D8D0BB1-62A1-4E9E-8BF5-3D684CD0B2E7_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_MiREcE": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/5D845303-A238-4C8B-8DB6-E1333DF18D54_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_6Jmbnp": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/47AEDF47-386B-48BB-AC8D-135030A7A873_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_UdMVi3": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/34AF4AEB-0859-4F0C-830C-B2F1883ACE04_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        },
+        "photo_9eRnUH": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/FE71A345-F8BF-42EC-BA0F-AAC3C85FA316_sq_900.jpg",
+            "caption": "Gebouwd door een klant"
+          }
+        }
+      },
+      "block_order": [
+        "photo_RirERW",
+        "photo_nMD6Tz",
+        "photo_m3KQbQ",
+        "photo_Fxtttz",
+        "photo_A6Pcg6",
+        "photo_MiREcE",
+        "photo_6Jmbnp",
+        "photo_UdMVi3",
+        "photo_9eRnUH"
+      ],
       "settings": {
         "title": "Foto's van klanten",
         "description": "Bekijk wat anderen hebben gebouwd met het bouwplan",
