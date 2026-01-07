@@ -59,10 +59,18 @@
               "title": "Menu",
               "menu": "main-menu"
             }
+          },
+          "menu_column_R9KHp7": {
+            "type": "menu_column",
+            "settings": {
+              "title": "Ondersteuning",
+              "menu": ""
+            }
           }
         },
         "block_order": [
-          "menu_column_XyXJ6h"
+          "menu_column_XyXJ6h",
+          "menu_column_R9KHp7"
         ],
         "settings": {
           "logo_letter": "S",

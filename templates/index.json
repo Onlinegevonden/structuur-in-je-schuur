@@ -51,55 +51,7 @@
         "image_alt": "Krattenkast bouwplan - houten opbergrek met IKEA Samla boxen",
         "show_price": true,
         "price_label": "Vanaf",
-        "price_value": "€19"
-      }
-    },
-    "how-it-works": {
-      "type": "how-it-works",
-      "blocks": {
-        "s1": {
-          "type": "step",
-          "settings": {
-            "icon": "shopping-bag",
-            "title": "1. Kies je bouwplan",
-            "description": "Selecteer het bouwplan dat past bij jouw situatie en wensen."
-          }
-        },
-        "s2": {
-          "type": "step",
-          "settings": {
-            "icon": "download",
-            "title": "2. Direct downloaden",
-            "description": "Na betaling ontvang je direct je PDF met alle instructies."
-          }
-        },
-        "s3": {
-          "type": "step",
-          "settings": {
-            "icon": "hammer",
-            "title": "3. Bouw het zelf",
-            "description": "Volg de stap-voor-stap instructies met onze duidelijke handleiding."
-          }
-        },
-        "s4": {
-          "type": "step",
-          "settings": {
-            "icon": "party-popper",
-            "title": "4. Geniet van je resultaat",
-            "description": "Een opgeruimde schuur binnen één weekend - gegarandeerd!"
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3",
-        "s4"
-      ],
-      "settings": {
-        "badge": "Zo simpel is het",
-        "title": "Hoe werkt het?",
-        "subtitle": "Van aankoop tot opgeruimde schuur in vier eenvoudige stappen."
+        "price_value": "€8,99"
       }
     },
     "benefits": {
@@ -166,6 +118,54 @@
         "badge": "Waarom onze bouwplannen",
         "title": "Ontworpen voor succes",
         "subtitle": "Onze bouwplannen zijn door honderden Nederlandse klussers getest en verfijnd."
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "icon": "shopping-bag",
+            "title": "1. Kies je bouwplan",
+            "description": "Selecteer het bouwplan dat past bij jouw situatie en wensen."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "icon": "download",
+            "title": "2. Direct downloaden",
+            "description": "Na betaling ontvang je direct je PDF met alle instructies."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "icon": "hammer",
+            "title": "3. Bouw het zelf",
+            "description": "Volg de stap-voor-stap instructies met onze duidelijke handleiding."
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "icon": "party-popper",
+            "title": "4. Geniet van je resultaat",
+            "description": "Een opgeruimde schuur binnen één weekend - gegarandeerd!"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "badge": "Zo simpel is het",
+        "title": "Hoe werkt het?",
+        "subtitle": "Van aankoop tot opgeruimde schuur in vier eenvoudige stappen."
       }
     },
     "testimonials": {
@@ -281,8 +281,8 @@
   },
   "order": [
     "hero",
-    "how-it-works",
     "benefits",
+    "how-it-works",
     "testimonials",
     "faq",
     "cta"
