@@ -1,0 +1,331 @@
+<section class="section">
+  <div class="container">
+    <!-- Header -->
+    <div class="examples__header">
+      <span class="badge">#krattenkast</span>
+      <h1 class="examples__title">{{ section.settings.title }}</h1>
+      <p class="examples__description">{{ section.settings.description }}</p>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="examples__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'photo' -%}
+          <div class="examples__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.caption | escape }}" loading="lazy">
+            {%- else -%}
+              <div class="examples__placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.caption != blank -%}
+              <div class="examples__caption">{{ block.settings.caption }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if section.blocks.size == 0 -%}
+        {%- for i in (1..9) -%}
+          <div class="examples__item">
+            <div class="examples__placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    <!-- Coming soon text -->
+    <p class="examples__coming-soon">{{ section.settings.coming_soon_text }}</p>
+
+    <!-- Stats -->
+    <div class="examples__stats">
+      <div class="examples__stat">
+        <span class="examples__stat-value">{{ section.settings.stat1_value }}</span>
+        <span class="examples__stat-label">{{ section.settings.stat1_label }}</span>
+      </div>
+      <div class="examples__stat">
+        <span class="examples__stat-value">{{ section.settings.stat2_value }}</span>
+        <span class="examples__stat-label">{{ section.settings.stat2_label }}</span>
+      </div>
+      <div class="examples__stat">
+        <span class="examples__stat-value">{{ section.settings.stat3_value }}</span>
+        <span class="examples__stat-label">{{ section.settings.stat3_label }}</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="examples__cta">
+      <h2 class="examples__cta-title">{{ section.settings.cta_title }}</h2>
+      <p class="examples__cta-description">{{ section.settings.cta_description }}</p>
+      <a href="{{ section.settings.cta_url }}" class="btn btn-brand btn-lg">
+        {{ section.settings.cta_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .examples__header {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 3rem;
+  }
+  .examples__header .badge {
+    margin-bottom: 1.5rem;
+  }
+  .examples__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 768px) {
+    .examples__title {
+      font-size: 2.5rem;
+    }
+  }
+  .examples__description {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+  }
+  .examples__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .examples__grid {
+      gap: 0.75rem;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  }
+  .examples__item {
+    aspect-ratio: 1;
+    background: var(--muted);
+    position: relative;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .examples__item {
+      border-radius: 0.5rem;
+    }
+  }
+  .examples__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .examples__item:hover img {
+    transform: scale(1.05);
+  }
+  .examples__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--muted) 0%, rgba(243,244,246,0.5) 100%);
+  }
+  .examples__placeholder svg {
+    color: var(--muted-foreground);
+    opacity: 0.3;
+  }
+  .examples__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    font-size: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .examples__item:hover .examples__caption {
+    opacity: 1;
+  }
+  .examples__coming-soon {
+    text-align: center;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    margin-top: 2rem;
+  }
+  .examples__stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 3rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (min-width: 768px) {
+    .examples__stats {
+      gap: 5rem;
+    }
+  }
+  .examples__stat {
+    text-align: center;
+  }
+  .examples__stat-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand);
+  }
+  @media (min-width: 768px) {
+    .examples__stat-value {
+      font-size: 2rem;
+    }
+  }
+  .examples__stat-label {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  .examples__cta {
+    text-align: center;
+    max-width: 32rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+  .examples__cta-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .examples__cta-title {
+      font-size: 1.875rem;
+    }
+  }
+  .examples__cta-description {
+    color: var(--muted-foreground);
+    margin-bottom: 1.5rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Voorbeelden",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Foto's van klanten"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Beschrijving",
+      "default": "Bekijk wat anderen hebben gebouwd met het bouwplan"
+    },
+    {
+      "type": "text",
+      "id": "coming_soon_text",
+      "label": "Coming soon tekst",
+      "default": "Binnenkort meer foto's van tevreden klanten"
+    },
+    {
+      "type": "header",
+      "content": "Statistieken"
+    },
+    {
+      "type": "text",
+      "id": "stat1_value",
+      "label": "Statistiek 1 waarde",
+      "default": "500+"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "Statistiek 1 label",
+      "default": "Klanten"
+    },
+    {
+      "type": "text",
+      "id": "stat2_value",
+      "label": "Statistiek 2 waarde",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label",
+      "label": "Statistiek 2 label",
+      "default": "Garantie"
+    },
+    {
+      "type": "text",
+      "id": "stat3_value",
+      "label": "Statistiek 3 waarde",
+      "default": "4.9★"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "Statistiek 3 label",
+      "default": "Beoordeling"
+    },
+    {
+      "type": "header",
+      "content": "Call-to-Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA titel",
+      "default": "Zelf aan de slag?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_description",
+      "label": "CTA beschrijving",
+      "default": "Download het bouwplan en deel straks jouw resultaat!"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA knop tekst",
+      "default": "Bekijk het bouwplan"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA knop URL",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Foto",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Bijschrift",
+          "default": "Gebouwd door een klant"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Voorbeelden"
+    }
+  ]
+}
+{% endschema %}

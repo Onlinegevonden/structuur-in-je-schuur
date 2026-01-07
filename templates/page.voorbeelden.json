@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "examples": {
+      "type": "examples",
+      "settings": {
+        "title": "Foto's van klanten",
+        "description": "Bekijk wat anderen hebben gebouwd met het bouwplan",
+        "coming_soon_text": "Binnenkort meer foto's van tevreden klanten",
+        "stat1_value": "500+",
+        "stat1_label": "Klanten",
+        "stat2_value": "100%",
+        "stat2_label": "Garantie",
+        "stat3_value": "4.9★",
+        "stat3_label": "Beoordeling",
+        "cta_title": "Zelf aan de slag?",
+        "cta_description": "Download het bouwplan en deel straks jouw resultaat!",
+        "cta_text": "Bekijk het bouwplan",
+        "cta_url": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "examples"
+  ]
+}
