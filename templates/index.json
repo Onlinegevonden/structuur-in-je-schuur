@@ -48,6 +48,7 @@
         "button1_url": "/collections/all",
         "button2_text": "Hoe werkt het?",
         "button2_url": "#hoe-werkt-het",
+        "image": "shopify://shop_images/structuur_in_je_schuur.jpg",
         "image_alt": "Krattenkast bouwplan - houten opbergrek met IKEA Samla boxen",
         "show_price": true,
         "price_label": "Vanaf",
