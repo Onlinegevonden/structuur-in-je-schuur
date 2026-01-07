@@ -36,8 +36,8 @@ ul { list-style: none; }
 .btn-brand:hover { opacity: 0.9; transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--foreground); border: 2px solid var(--brand); }
 .btn-outline:hover { background: var(--brand); color: var(--brand-foreground); }
-.btn-ghost { background: transparent; color: var(--muted-foreground); border: none; }
-.btn-ghost:hover { background: var(--muted); color: var(--foreground); border: none; }
+.btn-ghost { background: white; color: var(--foreground); border: 1px solid var(--border); }
+.btn-ghost:hover { background: var(--muted); color: var(--foreground); border: 1px solid var(--border); }
 .btn-lg { padding: 1rem 2rem; font-size: 1rem; }
 .btn-xl { padding: 1.125rem 2.25rem; font-size: 1.0625rem; }
 .btn-icon { padding: 0.625rem; }
